@@ -2,12 +2,12 @@
 <h1 align="center">Hey 👋, I'm Navaneeth P</h1>
 
 <h3 align="center">
-  Full-Stack Developer | AI/ML Enthusiast | Computer Science Student
+  Computer Science Student | Full-Stack Developer | AI/ML Enthusiast
 </h3>
 
 <p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=22&pause=1000&color=A78BFA&center=true&vCenter=true&width=650&lines=Welcome+to+my+GitHub!;Building+Real-World+Projects;Exploring+AI+%26+Machine+Learning;Learn.+Build.+Innovate.+%F0%9F%9A%80"
-       alt="Typing animation"/>
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=22&pause=1000&color=A78BFA&center=true&vCenter=true&width=650&lines=Welcome+to+my+GitHub!;Building+Real-World+Applications;Exploring+AI+%26+Machine+Learning;Learn.+Build.+Innovate.+%F0%9F%9A%80"
+       alt="Animated developer introduction"/>
 </p>
 
 <p align="center">
@@ -30,11 +30,11 @@
 
 I'm Navaneeth P, a Computer Science Engineering student passionate about software development, full-stack applications, and Artificial Intelligence.
 
-- 💻 Exploring full-stack development
-- 🤖 Interested in AI and Machine Learning
-- 🚀 Building practical software projects
+- 💻 Interested in full-stack web development
+- 🤖 Exploring AI and Machine Learning
+- 🚀 Building practical applications to solve real-world problems
 - 🗄️ Learning backend development and database design
-- 🌱 Continuously improving my technical skills
+- 🌱 Continuously improving my programming skills
 - 🎯 Aspiring Software Developer
 
 ---
@@ -43,18 +43,18 @@ I'm Navaneeth P, a Computer Science Engineering student passionate about softwar
 
 <p align="center">
   <img src="https://skillicons.dev/icons?i=java,python,js,html,css,react,nodejs,express,mongodb,mysql,flutter,dart,tensorflow,git,github,vscode&perline=8"
-       alt="Technologies and tools"/>
+       alt="Programming languages and technologies"/>
 </p>
 
 ---
 
-## 🚀 My GitHub Projects
+## 🚀 My Projects
 
-All projects listed below are generated automatically from my public GitHub repositories.
+Projects are automatically discovered from my public GitHub repositories. Each description is generated from the corresponding project's README.
 
 <!-- AUTO-PROJECTS:START -->
 
-_Projects will load automatically after the GitHub Actions workflow runs._
+_Your project list will be generated automatically when the GitHub Actions workflow runs._
 
 <!-- AUTO-PROJECTS:END -->
 
@@ -75,7 +75,7 @@ _Projects will load automatically after the GitHub Actions workflow runs._
 
 <p align="center">
   <img src="https://streak-stats.demolab.com?user=nava-07&theme=tokyonight&hide_border=true"
-       alt="GitHub contribution streak"/>
+       alt="Dynamic GitHub contribution streak"/>
 </p>
 
 ---
@@ -83,10 +83,10 @@ _Projects will load automatically after the GitHub Actions workflow runs._
 ## 🎯 My Goals
 
 - 🌐 Improve full-stack development skills
-- 🤖 Explore AI and Machine Learning
-- 🧩 Strengthen problem-solving skills
-- 🚀 Build and deploy useful applications
-- 🤝 Collaborate on open-source projects
+- 🤖 Explore practical AI and ML applications
+- 🧩 Strengthen programming and problem-solving skills
+- 🚀 Build and deploy real-world applications
+- 🤝 Collaborate on meaningful projects
 - 💼 Prepare for software development internships and placements
 
 ---
