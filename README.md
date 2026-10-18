@@ -20,6 +20,16 @@
 
 ---
 
+## 🔥 GitHub Streak
+
+<div align="center">
+
+[![GitHub Streak](https://streak-stats.demolab.com/?user=nava-07&theme=tokyonight&hide_border=true)](https://git.io/streak-stats)
+
+</div>
+
+---
+
 ## 👨‍💻 About Me
 
 - 🎓 Student passionate about software development and technology.
@@ -50,50 +60,48 @@
 
 ---
 
-
-## 🔥 GitHub Streak
-
-<div align="center">
-
-[![GitHub Streak](https://streak-stats.demolab.com/?user=nava-07&theme=tokyonight&hide_border=true)](https://git.io/streak-stats)
-
-</div>
-
-
 ## 🚀 My Projects
 
 <!-- AUTO-PROJECTS:START -->
 Projects will be generated automatically after you run the **Update Profile Projects** workflow in the Actions tab.
 <!-- AUTO-PROJECTS:END -->
 
-<sub>Project descriptions are extracted from public repository README files where available. Forks, archived repositories, and this profile repository are excluded.</sub>
+<sub>Projects are generated from eligible public GitHub repositories. Descriptions are extracted from repository README files where available.</sub>
 
 ---
 
 ## 🎯 Currently Focused On
 
-- Building practical full-stack applications.
-- Improving programming and problem-solving skills.
-- Exploring AI/ML integration in software projects.
-- Writing clean, maintainable code.
+- 🚀 Building practical full-stack applications.
+- 🧠 Improving programming and problem-solving skills.
+- 🤖 Exploring AI and machine learning integration.
+- 🗄️ Learning database design and backend development.
+- 📚 Writing clean, maintainable code.
 
 ---
 
 ## 🤝 Connect With Me
 
-<p align="center">
-  <a href="https://github.com/nava-07">
-    <img src="https://img.shields.io/badge/GitHub-Follow-181717?style=for-the-badge&logo=github" alt="Follow on GitHub"/>
-  </a>
-  <a href="https://www.linkedin.com/in/navaneeth-p-404790358/">
-    <img src="https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin" alt="Connect on LinkedIn"/>
-  </a>
-</p>
+<div align="center">
+
+<a href="https://github.com/nava-07">
+  <img src="https://img.shields.io/badge/GitHub-Follow-181717?style=for-the-badge&logo=github" alt="Follow on GitHub"/>
+</a>
+
+<a href="https://www.linkedin.com/in/navaneeth-p-404790358/">
+  <img src="https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin" alt="Connect on LinkedIn"/>
+</a>
+
+</div>
+
+---
 
 <div align="center">
 
 ### 💚 Thanks for visiting my profile!
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:00F7A5,100:0077B6&height=100&section=footer" alt="Footer banner"/>
+⭐ Feel free to explore my repositories and connect with me.
+
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:00F7A5,100:0077B6&height=120&section=footer" alt="Footer banner"/>
 
 </div>
