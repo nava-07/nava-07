@@ -59,6 +59,20 @@
 <img height="170" src="https://github-readme-stats.vercel.app/api/top-langs/?username=nava-07&layout=compact&theme=tokyonight&hide_border=true&langs_count=8" alt="Most used languages"/>
 
 </div>
+---
+
+## 🚀 My Projects
+
+<!-- AUTO-PROJECTS:START -->
+
+_Projects will be loaded automatically from my public GitHub repositories._
+
+<!-- AUTO-PROJECTS:END -->
+
+<div align="center">
+  <sub>✨ Automatically generated from my GitHub repositories and their README descriptions.</sub>
+</div>
+
 
 ---
 
