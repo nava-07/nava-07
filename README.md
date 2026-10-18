@@ -61,17 +61,12 @@
 </div>
 ---
 
+
 ## 🚀 My Projects
 
 <!-- AUTO-PROJECTS:START -->
-
-_Projects will be loaded automatically from my public GitHub repositories._
-
+Loading projects from my GitHub repositories...
 <!-- AUTO-PROJECTS:END -->
-
-<div align="center">
-  <sub>✨ Automatically generated from my GitHub repositories and their README descriptions.</sub>
-</div>
 
 
 ---
