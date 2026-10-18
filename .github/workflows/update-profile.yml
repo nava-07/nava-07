@@ -1,42 +1,43 @@
 
-name: Update GitHub Profile
+name: Generate GitHub Streak
 
 on:
-  schedule:
-    - cron: "17 * * * *"
   workflow_dispatch:
+  schedule:
+    - cron: "15 3 * * *"
 
 permissions:
   contents: write
 
+concurrency:
+  group: generate-github-streak
+  cancel-in-progress: false
+
 jobs:
-  update-profile:
+  generate-streak:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout profile repository
+      - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Set up Python
-        uses: actions/setup-python@v5
+      - name: Generate streak SVG
+        uses: DenverCoder1/github-readme-streak-stats@v1
         with:
-          python-version: "3.x"
+          options: user=nava-07&theme=tokyonight&hide_border=true
+          path: profile/streak.svg
+          token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Generate project list
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: python .github/scripts/update_projects.py
-
-      - name: Commit updated README
+      - name: Commit generated SVG
         run: |
+          mkdir -p profile
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add profile/streak.svg
 
-          git add README.md
-
-          if git diff --cached --quiet; then
-            echo "No changes to commit."
-          else
-            git commit -m "chore: update GitHub projects"
+          if ! git diff --cached --quiet; then
+            git commit -m "Update GitHub streak"
             git push
+          else
+            echo "No changes to commit."
           fi
