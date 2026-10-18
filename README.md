@@ -65,24 +65,23 @@
 ## 🚀 My Projects
 
 <!-- AUTO-PROJECTS:START -->
-Projects will be generated automatically after you run the **Update Profile Projects** workflow in the Actions tab.
+_Projects will appear here automatically after the GitHub Actions workflow runs._
 <!-- AUTO-PROJECTS:END -->
 
-<sub>Project descriptions are generated from eligible public repositories and their README files where available.</sub>
-
----
+<p align="center">
+  <sub>Automatically generated from my public GitHub repositories.</sub>
+</p>
 
 ## 🎯 Currently Focused On
 
-<div align="center">
+- 💻 **Full-Stack Development** — Building responsive web applications using React, Node.js, Express.js, and MongoDB.
+- 🤖 **AI & Machine Learning** — Exploring AI-powered applications, ML models, and intelligent automation.
+- 🧠 **Data Structures & Algorithms** — Strengthening problem-solving skills and writing efficient code.
+- 🗄️ **Backend & Database Engineering** — Designing REST APIs, implementing authentication, and working with MongoDB and MySQL.
+- 🚀 **Real-World Projects** — Turning ideas into practical, scalable, and user-friendly software solutions.
+- 🛠️ **Developer Tools & Git** — Improving version control, debugging, and development workflows.
+- 📚 **Continuous Learning** — Exploring new technologies, improving software engineering practices, and preparing for technical opportunities.
 
-| 💻 Development | 🤖 AI & Machine Learning | 🚀 Growth |
-|:---:|:---:|:---:|
-| Full-stack applications | AI-powered solutions | Problem solving |
-| Backend development | Intelligent automation | Continuous learning |
-| Database systems | Practical ML projects | Clean code |
-
-</div>
 
 ---
 
