@@ -20,13 +20,6 @@
 
 ---
 
-## 🔥 GitHub Streak
-
-<div align="center">
-
-[![GitHub Streak](https://streak-stats.demolab.com/?user=nava-07&theme=tokyonight&hide_border=true)](https://git.io/streak-stats)
-
-</div>
 
 ---
 
@@ -49,6 +42,13 @@
 </div>
 
 ---
+## 🔥 GitHub Streak
+
+<div align="center">
+
+[![GitHub Streak](https://streak-stats.demolab.com/?user=nava-07&theme=tokyonight&hide_border=true)](https://git.io/streak-stats)
+
+</div>
 
 ## 📊 GitHub Statistics
 
