@@ -1,20 +1,20 @@
 
-<!-- ========== HEADER ========== -->
+<!-- ================= HEADER ================= -->
 
 <h1 align="center">Hey 👋, I'm Navaneeth P</h1>
 
 <h3 align="center">
-  💻 Computer Science Engineering Student | Full-Stack Developer | AI/ML Enthusiast
+  Full-Stack Developer in Progress | AI/ML Enthusiast
 </h3>
 
 <p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=22&pause=1000&color=A78BFA&center=true&vCenter=true&width=700&lines=Welcome+to+my+GitHub+Profile!;Building+Full-Stack+Applications;Exploring+AI+%26+Machine+Learning;Turning+Ideas+Into+Reality+%F0%9F%9A%80"
-       alt="Typing animation" />
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=22&pause=1000&color=A78BFA&center=true&vCenter=true&width=650&lines=Welcome+to+my+GitHub!;Building+Real-World+Projects;Exploring+AI+%26+Machine+Learning;Learn.+Build.+Innovate.+%F0%9F%9A%80"
+       alt="Typing animation"/>
 </p>
 
 <p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:6D28D9,50:7C3AED,100:A78BFA&height=150&section=header&text=BUILD%20%7C%20LEARN%20%7C%20INNOVATE&fontSize=25&fontColor=FFFFFF&animation=fadeIn&fontAlignY=35"
-       alt="Purple developer banner" width="100%" />
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:6D28D9,50:7C3AED,100:A78BFA&height=160&section=header&text=BUILD%20%7C%20LEARN%20%7C%20INNOVATE&fontSize=25&fontColor=FFFFFF&animation=fadeIn&fontAlignY=35"
+       width="100%" alt="Purple developer banner"/>
 </p>
 
 <p align="center">
@@ -30,173 +30,102 @@
 
 ## 👨‍💻 About Me
 
-Hello! I'm **Navaneeth P**, a Computer Science Engineering student passionate about software development, Artificial Intelligence, and building innovative applications.
+I'm Navaneeth P, a Computer Science Engineering student interested in software development, Artificial Intelligence, and building useful applications.
 
 - 🎓 Computer Science Engineering student
-- 💻 Interested in full-stack web development
-- 🤖 Exploring AI, Machine Learning, and intelligent applications
-- 🚀 Building projects that solve real-world problems
-- 🗄️ Interested in databases, backend systems, and API development
-- 🌱 Continuously learning new technologies and improving my skills
+- 💻 Exploring full-stack web development
+- 🤖 Interested in AI and Machine Learning
+- 🚀 Building projects to solve real-world problems
+- 🗄️ Learning database design and backend development
+- 🌱 Always learning and improving
 - 🎯 Aspiring Software Developer
 
-> 💡 My goal is to transform creative ideas into useful, reliable, and intelligent software solutions.
-
 ---
 
-## 🛠️ Tech Stack & Tools
+## 🛠️ Tech Stack
 
-### 💻 Programming Languages
-
-<p align="left">
-  <img src="https://skillicons.dev/icons?i=java,python,js,c,cpp&perline=8" alt="Programming languages"/>
-</p>
-
-### 🌐 Frontend Development
-
-<p align="left">
-  <img src="https://skillicons.dev/icons?i=html,css,js,react&perline=8" alt="Frontend technologies"/>
-</p>
-
-### ⚙️ Backend Development
-
-<p align="left">
-  <img src="https://skillicons.dev/icons?i=nodejs,express&perline=8" alt="Backend technologies"/>
-</p>
-
-### 🗄️ Databases
-
-<p align="left">
-  <img src="https://skillicons.dev/icons?i=mongodb,mysql,firebase&perline=8" alt="Database technologies"/>
-</p>
-
-### 🤖 AI & Machine Learning
-
-<p align="left">
-  <img src="https://skillicons.dev/icons?i=python,tensorflow&perline=8" alt="AI and ML technologies"/>
-</p>
-
-### 📱 Mobile Development
-
-<p align="left">
-  <img src="https://skillicons.dev/icons?i=flutter,dart&perline=8" alt="Mobile development technologies"/>
-</p>
-
-### 🔧 Tools & Platforms
-
-<p align="left">
-  <img src="https://skillicons.dev/icons?i=git,github,vscode,postman&perline=8" alt="Developer tools"/>
+<p align="center">
+  <img src="https://skillicons.dev/icons?i=java,python,js,html,css,react,nodejs,express,mongodb,mysql,flutter,dart,tensorflow,git,github,vscode&perline=8"
+       alt="Technology stack"/>
 </p>
 
 ---
 
-## 🚀 My Projects
+## 🚀 Featured Projects
 
-### 1. 🛡️ SCANALYZE — Link & QR Safety Analyzer
+### 🛡️ 1. SCANALYZE — Link & QR Safety Analyzer
 
-**Domain:** Cybersecurity | Web Development
+A cybersecurity application designed to analyze QR codes and URLs to help users identify potentially unsafe links.
 
-A security-focused application designed to help users identify suspicious URLs and potentially malicious QR codes before opening them.
-
-**Key Features**
-- 📷 QR code scanning using a camera
-- 🖼️ QR code detection from uploaded images
+- 📷 QR scanning and image uploads
 - 🔗 Manual URL analysis
-- ⚠️ Safe, Suspicious, and Dangerous result categories
-- 🔍 URL reputation checks using threat intelligence services
-- 📊 Security explanations and scan results
+- ⚠️ Safe, Suspicious, and Dangerous classifications
+- 🔍 URL reputation and threat intelligence checks
 
-**Technology Stack:** JavaScript, Node.js, Express.js, MongoDB, QR decoding libraries, threat intelligence APIs.
+**Stack:** JavaScript, Node.js, Express.js, MongoDB, QR libraries, security APIs.
 
----
+### 🌾 2. FarmWise AI — Smart Farmer Guidance
 
-### 2. 🌾 FarmWise AI — Smart Farmer Guidance System
+An AI-powered agricultural mobile app concept for crop disease identification and farming assistance.
 
-**Domain:** Artificial Intelligence | Smart Agriculture | Mobile Development
-
-An AI-powered mobile application concept designed to help farmers access agricultural guidance and digital farming services.
-
-**Key Features**
-- 🌿 Crop disease identification from leaf images
-- 🤖 AI-powered multilingual farming chatbot
-- 🎙️ Voice-based interaction
-- 🌦️ Weather updates and farming guidance
+- 🌿 Crop disease detection from images
+- 🤖 Multilingual AI farming chatbot
+- 🎙️ Voice interaction
+- 🌦️ Weather information
 - 🛒 Digital agricultural marketplace
-- ☁️ Cloud storage for uploaded images
 
-**Technology Stack:** Flutter, Dart, Python, TensorFlow, Node.js, Express.js, MongoDB, Firebase Storage, AI APIs.
+**Stack:** Flutter, Dart, Python, TensorFlow, Node.js, MongoDB, Firebase.
 
----
+### 🚨 3. ResQ — DisasterAI Response Platform
 
-### 3. 🚨 ResQ — DisasterAI Response Platform
+A disaster management platform concept for coordinating emergency reports, rescue requests, volunteers, and resources.
 
-**Domain:** Disaster Management | Real-Time Applications | AI
-
-A disaster response platform concept designed to improve emergency reporting, rescue coordination, and resource management.
-
-**Key Features**
 - 🆘 Disaster reporting and rescue requests
-- 🗺️ Live disaster and danger map
+- 🗺️ Live danger maps
 - 👥 Volunteer coordination
-- 📦 Resource and supply tracking
-- 🔔 Real-time notifications
-- 🧠 AI-based disaster severity prediction
+- 📦 Resource tracking
+- 🔔 Real-time alerts
+- 🧠 AI-based severity prediction
 
-**Technology Stack:** MongoDB, Express.js, React, Node.js, Socket.IO, Maps API, geolocation services, AI/ML.
+**Stack:** React, Node.js, Express.js, MongoDB, Socket.IO, Maps API.
 
----
+### 🤖 4. Smart Helpdesk for IT Services
 
-### 4. 🤖 Smart Helpdesk for IT Services
+An intelligent IT support platform designed to streamline ticket handling and improve issue resolution.
 
-**Domain:** Artificial Intelligence | IT Service Management | Automation
-
-An intelligent support platform designed to organize IT incidents and improve the efficiency of technical support teams.
-
-**Key Features**
-- 🎫 IT support ticket creation and tracking
+- 🎫 Support ticket management
 - 🧩 Issue categorization and prioritization
-- 👨‍💻 Technician assignment and status updates
-- 📚 Knowledge base and suggested solutions
-- 📊 Ticket analytics and dashboard
-- 🧠 AI-assisted ticket classification and response suggestions
+- 👨‍💻 Technician assignment
+- 📚 Knowledge base
+- 📊 Analytics dashboard
+- 🧠 AI-assisted ticket classification
 
-**Technology Stack:** React, Node.js, Express.js, MongoDB, Python, NLP or AI APIs.
+**Stack:** React, Node.js, Express.js, MongoDB, Python, AI APIs.
 
----
+### ✅ 5. TODO App — Task Management System
 
-### 5. ✅ TODO App — Personal Task Management System
+A task management application with user authentication and a personalized dashboard.
 
-**Domain:** Full-Stack Web Development | Database Management
-
-A task management application designed to help users organize their daily activities through a personalized dashboard.
-
-**Key Features**
-- 🔐 User registration and login
+- 🔐 Registration and login
 - 📝 Create, update, and delete tasks
 - 📂 Multiple task lists
 - ✅ Active and completed task views
-- 💾 Persistent storage using MongoDB
-- 📱 Responsive interface with interactive components
+- 💾 MongoDB persistence
+- 📱 Responsive interface
 
-**Technology Stack:** HTML, CSS, JavaScript, Node.js, Express.js, MongoDB, Mongoose, JWT.
+**Stack:** HTML, CSS, JavaScript, Node.js, Express.js, MongoDB, Mongoose, JWT.
 
----
+### 🚀 6. FutureForge — AI Skill Optimization
 
-### 6. 🚀 FutureForge — AI Skill Optimization Platform
+An AI-powered career development platform concept designed to help students understand skill gaps and explore personalized learning paths.
 
-**Domain:** Artificial Intelligence | Career Development | EdTech
-
-An AI-powered career development platform concept designed to help students identify skill gaps and create personalized learning plans.
-
-**Key Features**
 - 📄 Resume analysis
 - 🎯 Skill-gap identification
-- 💼 Career and job-role matching
-- 🧭 Personalized learning roadmaps
-- 📈 Skill development recommendations
-- 🤖 AI-assisted career preparation
+- 💼 Job-role matching
+- 🧭 Personalized learning recommendations
+- 📈 Career development tools
 
-**Technology Stack:** React, Node.js, Express.js, MongoDB, Python, NLP, AI APIs.
+**Stack:** React, Node.js, Express.js, MongoDB, Python, NLP, AI APIs.
 
 ---
 
@@ -205,31 +134,47 @@ An AI-powered career development platform concept designed to help students iden
 <p align="center">
   <img height="170"
        src="https://github-readme-stats.vercel.app/api?username=nava-07&show_icons=true&theme=tokyonight&hide_border=true&rank_icon=github"
-       alt="GitHub statistics"/>
+       alt="GitHub stats"/>
   <img height="170"
        src="https://github-readme-stats.vercel.app/api/top-langs/?username=nava-07&layout=compact&theme=tokyonight&hide_border=true"
-       alt="Most used programming languages"/>
+       alt="Top languages"/>
 </p>
 
-<p align="center">
-  <img src="https://streak-stats.demolab.com?user=nava-07&theme=tokyonight&hide_border=true"
-       alt="GitHub contribution streak" width="70%"/>
-</p>
+## 🔥 Contribution Streak
 
 <p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=rect&color=gradient&height=2"
-       alt="Section divider" width="100%"/>
+  <img src="https://streak-stats.demolab.com?user=nava-07&theme=tokyonight&hide_border=true&date_format=M%20j%5B%2C%20Y%5D"
+       alt="GitHub contribution streak"/>
+</p>
+
+## 📈 Contribution Activity
+
+<p align="center">
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=nava-07&theme=tokyo-night&hide_border=true&area=true"
+       width="100%" alt="Contribution activity graph"/>
 </p>
 
 ---
 
-## 🎯 Current Goals
+## 📂 All My Public Repositories
 
-- 🌐 Improve my full-stack development skills
-- 🤖 Explore practical AI and Machine Learning applications
-- 🧩 Strengthen problem-solving and programming fundamentals
-- 🚀 Build and deploy real-world projects
-- 🤝 Collaborate with developers and contribute to open source
+Explore my projects, experiments, and development work.
+
+<!-- AUTO-PROJECTS:START -->
+
+_Your projects will appear here automatically._
+
+<!-- AUTO-PROJECTS:END -->
+
+---
+
+## 🎯 My Goals
+
+- 🌐 Improve full-stack development skills
+- 🤖 Explore AI and Machine Learning
+- 🧩 Strengthen programming and problem-solving
+- 🚀 Build and deploy real-world applications
+- 🤝 Collaborate on meaningful projects
 - 💼 Prepare for software development internships and placements
 
 ---
@@ -246,12 +191,12 @@ An AI-powered career development platform concept designed to help students iden
 </p>
 
 <p align="center">
-  💬 Always open to learning, collaboration, and exciting development opportunities!
+  💜 Thanks for visiting my profile!
 </p>
 
 <h3 align="center">✨ Learn. Build. Innovate. Repeat. ✨</h3>
 
 <p align="center">
   <img src="https://capsule-render.vercel.app/api?type=waving&color=0:6D28D9,50:7C3AED,100:A78BFA&height=100&section=footer"
-       alt="Purple footer banner" width="100%"/>
+       width="100%" alt="Purple footer banner"/>
 </p>
