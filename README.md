@@ -50,15 +50,15 @@
 
 ---
 
+
 ## 🔥 GitHub Streak
 
 <div align="center">
 
-<img src="./profile/streak.svg" alt="GitHub contribution streak" width="90%"/>
+[![GitHub Streak](https://streak-stats.demolab.com/?user=nava-07&theme=tokyonight&hide_border=true)](https://git.io/streak-stats)
 
 </div>
 
----
 
 ## 🚀 My Projects
 
