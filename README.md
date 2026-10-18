@@ -60,32 +60,15 @@
 
 </div>
 
-## 🚀 My Projects
-
-<!-- AUTO-PROJECTS:START -->
-<!-- AUTO-PROJECTS:END -->
-
----
-
 ## 🎯 Currently Focused On
 
-- 💻 **Full-Stack Development** — Building responsive applications using React, Node.js, Express.js, and MongoDB.
-- 🤖 **AI & Machine Learning** — Exploring AI-powered applications and intelligent automation.
-- 🧠 **Data Structures & Algorithms** — Improving problem-solving and coding efficiency.
-- 🗄️ **Backend & Database Engineering** — Developing REST APIs and working with MongoDB and MySQL.
-- 🚀 **Real-World Projects** — Building practical and user-friendly software solutions.
-- 📚 **Continuous Learning** — Exploring new technologies and improving software engineering skills.
-
-
-## 🎯 Currently Focused On
-
-- 💻 **Full-Stack Development** — Building responsive web applications using React, Node.js, Express.js, and MongoDB.
-- 🤖 **AI & Machine Learning** — Exploring AI-powered applications, ML models, and intelligent automation.
+- 💻 **Full-Stack Development** — Building responsive web applications using React, Node.js, Express.js and MongoDB.
+- 🤖 **AI & Machine Learning** — Exploring AI-powered applications, ML models and intelligent automation.
 - 🧠 **Data Structures & Algorithms** — Strengthening problem-solving skills and writing efficient code.
-- 🗄️ **Backend & Database Engineering** — Designing REST APIs, implementing authentication, and working with MongoDB and MySQL.
-- 🚀 **Real-World Projects** — Turning ideas into practical, scalable, and user-friendly software solutions.
-- 🛠️ **Developer Tools & Git** — Improving version control, debugging, and development workflows.
-- 📚 **Continuous Learning** — Exploring new technologies, improving software engineering practices, and preparing for technical opportunities.
+- 🗄️ **Backend & Database Engineering** — Designing REST APIs, implementing authentication and working with MongoDB and MySQL.
+- 🚀 **Real-World Projects** — Turning ideas into practical, scalable and user-friendly software solutions.
+- 🛠️ **Developer Tools & Git** — Improving version control, debugging and development workflows.
+- 📚 **Continuous Learning** — Exploring new technologies, improving software engineering practices and preparing for technical opportunities.
 
 
 ---
@@ -108,3 +91,11 @@
 <img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=0:F5C6E8,50:B8F5D0,100:9BE7FF&height=120&section=footer" alt="Liquid-inspired footer"/>
 
 </div>
+
+
+## 🚀 My Projects
+
+<!-- AUTO-PROJECTS:START -->
+<!-- AUTO-PROJECTS:END -->
+
+---
