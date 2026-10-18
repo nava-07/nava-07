@@ -60,8 +60,6 @@
 
 </div>
 
-
-
 ## 🚀 My Projects
 
 <!-- AUTO-PROJECTS:START -->
