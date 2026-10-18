@@ -1,4 +1,5 @@
 
+import html
 import json
 import os
 import re
@@ -17,11 +18,10 @@ TOKEN = os.environ.get("GITHUB_TOKEN", "")
 
 
 def github_get(url, accept="application/vnd.github+json"):
-    """Fetch data from GitHub's REST API."""
     headers = {
         "Accept": accept,
         "X-GitHub-Api-Version": "2022-11-28",
-        "User-Agent": "nava-07-profile-project-updater",
+        "User-Agent": "nava-07-project-updater",
     }
 
     if TOKEN:
@@ -33,8 +33,7 @@ def github_get(url, accept="application/vnd.github+json"):
         return response.read()
 
 
-def get_repositories():
-    """Fetch all pages of public repositories."""
+def fetch_repositories():
     repositories = []
     page = 1
 
@@ -44,14 +43,14 @@ def get_repositories():
             f"?type=public&sort=updated&per_page=100&page={page}"
         )
 
-        page_data = json.loads(github_get(url).decode("utf-8"))
+        data = json.loads(github_get(url).decode("utf-8"))
 
-        if not page_data:
+        if not data:
             break
 
-        repositories.extend(page_data)
+        repositories.extend(data)
 
-        if len(page_data) < 100:
+        if len(data) < 100:
             break
 
         page += 1
@@ -66,26 +65,14 @@ def get_repositories():
     ]
 
 
-def clean_markdown(text):
-    """Turn Markdown content into readable plain text."""
-    text = re.sub(r"<!--.*?-->", " ", text, flags=re.DOTALL)
-    text = re.sub(r"!\[[^\]]*\]\([^)]*\)", " ", text)
-    text = re.sub(r"<[^>]+>", " ", text)
-    text = re.sub(r"\[([^\]]+)\]\([^)]*\)", r"\1", text)
-    text = re.sub(r"`{1,3}([^`]+)`{1,3}", r"\1", text)
-    text = re.sub(r"[*_~]", "", text)
-    text = re.sub(r"\s+", " ", text)
-    return text.strip()
+def fetch_readme_description(repo):
+    fallback = repo.get("description") or "No description available."
 
-
-def get_readme_description(repo):
-    """Use the first useful README paragraph, or repository description."""
-    fallback = repo.get("description") or "No description provided."
     url = f"{API_BASE}/repos/{USERNAME}/{repo['name']}/readme"
 
     try:
-        raw_content = github_get(url, "application/vnd.github.raw+json")
-        content = raw_content.decode("utf-8", errors="replace")
+        raw = github_get(url, "application/vnd.github.raw+json")
+        content = raw.decode("utf-8", errors="replace")
 
     except urllib.error.HTTPError as error:
         if error.code in (404, 409):
@@ -95,85 +82,82 @@ def get_readme_description(repo):
     except (urllib.error.URLError, TimeoutError):
         return fallback
 
-    # Find the first meaningful paragraph, skipping headings and badges.
-    paragraphs = re.split(r"\n\s*\n", content)
+    content = re.sub(r"<!--.*?-->", " ", content, flags=re.DOTALL)
+    content = re.sub(r"!\[[^\]]*\]\([^)]*\)", " ", content)
 
-    for paragraph in paragraphs:
+    for paragraph in re.split(r"\n\s*\n", content):
         lines = []
 
         for line in paragraph.splitlines():
             line = line.strip()
 
-            if not line:
+            if not line or line.startswith("#"):
                 continue
 
-            if line.startswith("#") or line.startswith("!["):
+            if "shields.io/" in line or "badgen.net/" in line:
                 continue
 
-            if line.startswith("<") and line.endswith(">"):
-                continue
-
-            if line.startswith("[!["):
+            if line.startswith("<") or line.startswith("[!["):
                 continue
 
             lines.append(line)
 
-        description = clean_markdown(" ".join(lines))
+        description = " ".join(lines)
+        description = re.sub(r"<[^>]+>", " ", description)
+        description = re.sub(
+            r"\[([^\]]+)\]\([^)]*\)", r"\1", description
+        )
+        description = re.sub(r"`([^`]+)`", r"\1", description)
+        description = re.sub(r"[*_~]", "", description)
+        description = re.sub(r"\s+", " ", description).strip()
 
-        if len(description) >= 25:
-            if len(description) > 240:
-                description = description[:237].rsplit(" ", 1)[0] + "..."
+        if len(description) >= 20:
+            if len(description) > 220:
+                description = description[:217].rsplit(" ", 1)[0] + "..."
             return description
 
     return fallback
 
 
-def build_project_table(repositories):
-    """Build a Markdown table from the repositories."""
+def generate_project_cards(repositories):
     if not repositories:
-        return (
-            "No eligible public repositories found yet. "
-            "Publish a public project to display it here."
-        )
+        return "_No eligible public repositories found._"
 
-    rows = [
-        "| Project | Description | Language | Stars |",
-        "|---|---|---|---:|",
-    ]
+    rows = ['<table>']
 
-    for repo in repositories:
-        name = repo.get("name", "Unnamed")
-        url = repo.get("html_url", "")
-        language = repo.get("language") or "Not specified"
-        stars = repo.get("stargazers_count", 0)
+    for index in range(0, len(repositories), 2):
+        rows.append("<tr>")
 
-        description = get_readme_description(repo)
+        for repo in repositories[index:index + 2]:
+            name = html.escape(repo.get("name", "Project"))
+            url = html.escape(repo.get("html_url", ""), quote=True)
+            description = html.escape(fetch_readme_description(repo))
+            language = html.escape(repo.get("language") or "Other")
+            stars = repo.get("stargazers_count", 0)
 
-        # Prevent table formatting from breaking.
-        name = name.replace("|", "\\|").replace("[", "\\[")
-        description = description.replace("|", "\\|").replace("\n", " ")
-        language = language.replace("|", "\\|")
+            rows.append(f"""
+<td width="50%" valign="top">
+  <h3><a href="{url}">🚀 {name}</a></h3>
+  <p>{description}</p>
+  <p><sub>💻 {language} · ⭐ {stars}</sub></p>
+</td>
+""")
 
-        rows.append(
-            f"| [{name}]({url}) | {description} | {language} | {stars} |"
-        )
+        if len(repositories[index:index + 2]) == 1:
+            rows.append('<td width="50%"></td>')
 
+        rows.append("</tr>")
+
+    rows.append("</table>")
     return "\n".join(rows)
 
 
-def update_readme(project_table):
-    """Replace only the auto-generated project section."""
-    if not os.path.isfile(README_PATH):
-        raise FileNotFoundError(f"Cannot find {README_PATH}")
-
+def update_readme(project_cards):
     with open(README_PATH, "r", encoding="utf-8") as file:
         readme = file.read()
 
     if START_MARKER not in readme or END_MARKER not in readme:
-        raise ValueError(
-            "Missing project markers. Check README.md for "
-            "AUTO-PROJECTS:START and AUTO-PROJECTS:END."
-        )
+        raise ValueError("Project markers are missing from README.md.")
 
     start = readme.index(START_MARKER) + len(START_MARKER)
     end = readme.index(END_MARKER)
@@ -181,27 +165,28 @@ def update_readme(project_table):
     if end < start:
         raise ValueError("Project markers are in the wrong order.")
 
-    new_section = "\n\n" + project_table + "\n"
-    updated_readme = readme[:start] + new_section + readme[end:]
-
-    if updated_readme == readme:
-        print("Project section is already up to date.")
-        return
+    updated = (
+        readme[:start]
+        + "\n\n"
+        + project_cards
+        + "\n\n"
+        + readme[end:]
+    )
 
     with open(README_PATH, "w", encoding="utf-8") as file:
-        file.write(updated_readme)
+        file.write(updated)
 
-    print("Successfully updated README.md.")
+    print("Project cards generated successfully.")
 
 
 def main():
-    print(f"Fetching public repositories for {USERNAME}...")
+    print(f"Fetching repositories for {USERNAME}...")
 
-    repositories = get_repositories()
-    print(f"Found {len(repositories)} eligible repositories.")
+    repositories = fetch_repositories()
+    print(f"Found {len(repositories)} eligible public repositories.")
 
-    project_table = build_project_table(repositories)
-    update_readme(project_table)
+    cards = generate_project_cards(repositories)
+    update_readme(cards)
 
 
 if __name__ == "__main__":
