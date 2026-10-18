@@ -62,16 +62,6 @@
 
 ---
 
-## 🚀 My Projects
-
-<!-- AUTO-PROJECTS:START -->
-_Projects will appear here automatically after the GitHub Actions workflow runs._
-<!-- AUTO-PROJECTS:END -->
-
-<p align="center">
-  <sub>Automatically generated from my public GitHub repositories.</sub>
-</p>
-
 ## 🎯 Currently Focused On
 
 - 💻 **Full-Stack Development** — Building responsive web applications using React, Node.js, Express.js, and MongoDB.
