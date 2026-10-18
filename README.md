@@ -69,6 +69,16 @@
 
 ## 🎯 Currently Focused On
 
+- 💻 **Full-Stack Development** — Building responsive applications using React, Node.js, Express.js, and MongoDB.
+- 🤖 **AI & Machine Learning** — Exploring AI-powered applications and intelligent automation.
+- 🧠 **Data Structures & Algorithms** — Improving problem-solving and coding efficiency.
+- 🗄️ **Backend & Database Engineering** — Developing REST APIs and working with MongoDB and MySQL.
+- 🚀 **Real-World Projects** — Building practical and user-friendly software solutions.
+- 📚 **Continuous Learning** — Exploring new technologies and improving software engineering skills.
+
+
+## 🎯 Currently Focused On
+
 - 💻 **Full-Stack Development** — Building responsive web applications using React, Node.js, Express.js, and MongoDB.
 - 🤖 **AI & Machine Learning** — Exploring AI-powered applications, ML models, and intelligent automation.
 - 🧠 **Data Structures & Algorithms** — Strengthening problem-solving skills and writing efficient code.
