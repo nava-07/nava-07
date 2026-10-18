@@ -4,22 +4,17 @@ import os
 import urllib.request
 from pathlib import Path
 
-# ================= CONFIGURATION =================
-
 USERNAME = "nava-07"
 README_PATH = Path("README.md")
 
 START_MARKER = "<!-- AUTO-PROJECTS:START -->"
 END_MARKER = "<!-- AUTO-PROJECTS:END -->"
 
-# GitHub Actions provides this token automatically.
 TOKEN = os.environ.get("GITHUB_TOKEN")
 
 if not TOKEN:
-    raise RuntimeError("GITHUB_TOKEN environment variable is missing.")
+    raise RuntimeError("GITHUB_TOKEN is missing.")
 
-
-# ================= FETCH REPOSITORIES =================
 
 def fetch_repositories():
     repositories = []
@@ -57,13 +52,12 @@ def fetch_repositories():
     return repositories
 
 
-# ================= FORMAT PROJECT LIST =================
-
 def escape_markdown(value):
-    """Keep generated Markdown fields on one line."""
     return (
         str(value or "")
-        .replace("\\", "\\\\")
+        .replace("&", "&amp;")
+        .replace("<", "&lt;")
+        .replace(">", "&gt;")
         .replace("|", "\\|")
         .replace("\r", " ")
         .replace("\n", " ")
@@ -72,7 +66,8 @@ def escape_markdown(value):
 
 
 def build_project_list(repositories):
-    # Exclude the profile repository, forks, and archived projects.
+    # Show all public, owned, non-archived repositories.
+    # Exclude only the profile README repository itself.
     projects = [
         repo for repo in repositories
         if not repo.get("private", False)
@@ -81,58 +76,58 @@ def build_project_list(repositories):
         and repo["name"].lower() != USERNAME.lower()
     ]
 
-    # Sort alphabetically for a consistent profile.
-    projects.sort(key=lambda repo: repo["name"].lower())
+    projects.sort(
+        key=lambda repo: repo["name"].lower()
+    )
 
-    lines = []
+    if not projects:
+        return "_No public project repositories found yet._"
+
+    lines = [
+        "| Repository | Description | Language | Stars |",
+        "|---|---|---|---:|",
+    ]
 
     for repo in projects:
         name = escape_markdown(repo["name"])
-        description = escape_markdown(repo.get("description"))
-        language = escape_markdown(repo.get("language"))
+        description = escape_markdown(
+            repo.get("description") or "No description added yet."
+        )
+        language = escape_markdown(
+            repo.get("language") or "Not specified"
+        )
         stars = repo.get("stargazers_count", 0)
         url = repo["html_url"]
 
-        if not description:
-            description = "No description added yet."
-
-        if not language:
-            language = "Not specified"
-
         lines.append(
-            f"- 📦 **[{name}]({url})** — {description}  \n"
-            f"  💻 `{language}` · ⭐ {stars}"
+            f"| [{name}]({url}) | {description} | "
+            f"{language} | ⭐ {stars} |"
         )
 
-    if not lines:
-        return "_No public repositories found yet._"
+    return "\n".join(lines)
 
-    return "\n\n".join(lines)
-
-
-# ================= UPDATE README =================
 
 def update_readme(project_list):
     if not README_PATH.exists():
-        raise FileNotFoundError("README.md was not found.")
+        raise FileNotFoundError("README.md not found.")
 
     readme = README_PATH.read_text(encoding="utf-8")
 
     if readme.count(START_MARKER) != 1:
         raise ValueError(
-            "README.md must contain exactly one AUTO-PROJECTS:START marker."
+            "README must contain exactly one AUTO-PROJECTS:START marker."
         )
 
     if readme.count(END_MARKER) != 1:
         raise ValueError(
-            "README.md must contain exactly one AUTO-PROJECTS:END marker."
+            "README must contain exactly one AUTO-PROJECTS:END marker."
         )
 
     start = readme.index(START_MARKER) + len(START_MARKER)
     end = readme.index(END_MARKER)
 
     if start >= end:
-        raise ValueError("The project markers are in the wrong order.")
+        raise ValueError("Project markers are in the wrong order.")
 
     updated_readme = (
         readme[:start]
@@ -147,20 +142,16 @@ def update_readme(project_list):
         return
 
     README_PATH.write_text(updated_readme, encoding="utf-8")
-    print("README.md updated successfully.")
+    print("README updated successfully.")
 
-
-# ================= MAIN =================
 
 def main():
     repositories = fetch_repositories()
     project_list = build_project_list(repositories)
     update_readme(project_list)
 
-    print(
-        f"Processed {len(repositories)} public repositories "
-        f"for {USERNAME}."
-    )
+    print(f"Fetched {len(repositories)} public repositories.")
+    print("Profile project list generation completed.")
 
 
 if __name__ == "__main__":
