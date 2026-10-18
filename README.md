@@ -93,9 +93,8 @@
 </div>
 
 
-## 🚀 My Projects
+
 
 <!-- AUTO-PROJECTS:START -->
 <!-- AUTO-PROJECTS:END -->
 
----
