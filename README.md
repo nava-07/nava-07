@@ -65,9 +65,7 @@
 ## 🚀 My Projects
 
 <!-- AUTO-PROJECTS:START -->
-Loading projects from my GitHub repositories...
 <!-- AUTO-PROJECTS:END -->
-
 
 ---
 
