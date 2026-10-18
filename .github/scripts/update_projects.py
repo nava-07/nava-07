@@ -8,9 +8,9 @@ import time
 import urllib.error
 import urllib.request
 
-# --------------------------------------------------
+# ==================================================
 # CONFIGURATION
-# --------------------------------------------------
+# ==================================================
 
 USERNAME = "nava-07"
 PROFILE_REPO = "nava-07"
@@ -23,17 +23,17 @@ API_BASE = "https://api.github.com"
 TOKEN = os.environ.get("GITHUB_TOKEN", "")
 
 
-# --------------------------------------------------
-# GITHUB API
-# --------------------------------------------------
+# ==================================================
+# GITHUB API REQUEST
+# ==================================================
 
 def github_get(url, accept="application/vnd.github+json"):
-    """Fetch data from the GitHub API with error handling."""
+    """Fetch data from GitHub with basic retry handling."""
 
     headers = {
         "Accept": accept,
         "X-GitHub-Api-Version": "2022-11-28",
-        "User-Agent": "nava-07-profile-project-updater",
+        "User-Agent": "nava-07-project-updater",
     }
 
     if TOKEN:
@@ -47,30 +47,33 @@ def github_get(url, accept="application/vnd.github+json"):
                 return response.read()
 
         except urllib.error.HTTPError as error:
+            if error.code in (404, 409):
+                raise
+
             if error.code == 403:
-                remaining = error.headers.get("X-RateLimit-Remaining")
-                if remaining == "0":
-                    reset = error.headers.get("X-RateLimit-Reset")
-                    print(
-                        "GitHub API rate limit reached. "
-                        f"Reset timestamp: {reset}"
-                    )
-            raise
+                print("GitHub API access or rate limit error.")
+                raise
+
+            if attempt == 2:
+                raise
+
+            time.sleep(attempt + 1)
 
         except (urllib.error.URLError, TimeoutError):
             if attempt == 2:
                 raise
+
             time.sleep(attempt + 1)
 
-    raise RuntimeError(f"Could not fetch {url}")
+    raise RuntimeError(f"Unable to fetch: {url}")
 
 
-# --------------------------------------------------
-# FETCH PUBLIC REPOSITORIES
-# --------------------------------------------------
+# ==================================================
+# FETCH REPOSITORIES
+# ==================================================
 
 def fetch_repositories():
-    """Fetch all eligible public repositories, including pagination."""
+    """Fetch all eligible public repositories for the user."""
 
     repositories = []
     page = 1
@@ -81,7 +84,7 @@ def fetch_repositories():
             f"?type=public&sort=updated&per_page=100&page={page}"
         )
 
-        print(f"Fetching repositories page {page}...")
+        print(f"Fetching repository page {page}...")
 
         data = json.loads(github_get(url).decode("utf-8"))
 
@@ -95,7 +98,6 @@ def fetch_repositories():
 
         page += 1
 
-    # Exclude the profile repository, forks, archived and disabled repos.
     eligible = [
         repo for repo in repositories
         if repo.get("name", "").lower() != PROFILE_REPO.lower()
@@ -105,29 +107,28 @@ def fetch_repositories():
         and not repo.get("private", True)
     ]
 
-    # Display recently updated projects first.
     eligible.sort(
         key=lambda repo: repo.get("updated_at", ""),
         reverse=True,
     )
 
-    print(f"Found {len(eligible)} eligible public repositories.")
+    print(f"Eligible public repositories: {len(eligible)}")
 
     return eligible
 
 
-# --------------------------------------------------
-# EXTRACT README DESCRIPTION
-# --------------------------------------------------
+# ==================================================
+# GET DESCRIPTION FROM EACH REPOSITORY README
+# ==================================================
 
 def clean_markdown(text):
-    """Convert README Markdown into readable plain text."""
+    """Remove common Markdown formatting from a description."""
 
     text = re.sub(r"<!--.*?-->", " ", text, flags=re.DOTALL)
     text = re.sub(r"!\[[^\]]*\]\([^)]*\)", " ", text)
     text = re.sub(r"<[^>]+>", " ", text)
     text = re.sub(r"\[([^\]]+)\]\([^)]*\)", r"\1", text)
-    text = re.sub(r"`{1,3}([^`]+)`{1,3}", " ", text)
+    text = re.sub(r"`{1,3}([^`]+)`{1,3}", r"\1", text)
     text = re.sub(r"https?://\S+", " ", text)
     text = re.sub(r"[*_~]", "", text)
     text = re.sub(r"\s+", " ", text)
@@ -136,7 +137,7 @@ def clean_markdown(text):
 
 
 def fetch_readme_description(repo):
-    """Use the first meaningful README paragraph or repo description."""
+    """Extract the first useful README paragraph."""
 
     fallback = repo.get("description") or "No description provided."
 
@@ -150,7 +151,6 @@ def fetch_readme_description(repo):
             url,
             accept="application/vnd.github.raw+json",
         )
-
         content = raw.decode("utf-8", errors="replace")
 
     except urllib.error.HTTPError as error:
@@ -158,22 +158,19 @@ def fetch_readme_description(repo):
             return fallback
 
         print(
-            f"Warning: README fetch failed for "
+            f"Warning: README unavailable for "
             f"{repo['name']}: HTTP {error.code}"
         )
         return fallback
 
     except (urllib.error.URLError, TimeoutError) as error:
-        print(f"Warning: Could not fetch README for {repo['name']}: {error}")
+        print(f"Warning: README request failed for {repo['name']}: {error}")
         return fallback
 
-    # Remove HTML comments and image Markdown before parsing paragraphs.
     content = re.sub(r"<!--.*?-->", " ", content, flags=re.DOTALL)
     content = re.sub(r"!\[[^\]]*\]\([^)]*\)", " ", content)
 
-    paragraphs = re.split(r"\n\s*\n", content)
-
-    for paragraph in paragraphs:
+    for paragraph in re.split(r"\n\s*\n", content):
         lines = []
 
         for line in paragraph.splitlines():
@@ -182,7 +179,6 @@ def fetch_readme_description(repo):
             if not line or line.startswith("#"):
                 continue
 
-            # Skip badge-only lines.
             if (
                 "shields.io/" in line
                 or "badgen.net/" in line
@@ -208,29 +204,27 @@ def fetch_readme_description(repo):
     return fallback
 
 
-# --------------------------------------------------
+# ==================================================
 # GENERATE PROJECT CARDS
-# --------------------------------------------------
+# ==================================================
 
 def generate_project_cards(repositories):
-    """Generate a two-column HTML table of actual repositories."""
+    """Create two-column project cards from real repositories."""
 
     if not repositories:
         return (
-            "_No eligible public repositories found. "
-            "Check that your repositories are public._"
+            "<p>No eligible public repositories found. "
+            "Check your public repositories on GitHub.</p>"
         )
 
-    output = [
-        '<table>',
-    ]
+    cards = ["<table>"]
 
     for index in range(0, len(repositories), 2):
-        output.append("<tr>")
+        cards.append("<tr>")
 
-        row_repositories = repositories[index:index + 2]
+        current_row = repositories[index:index + 2]
 
-        for repo in row_repositories:
+        for repo in current_row:
             name = html.escape(repo.get("name", "Project"))
             url = html.escape(repo.get("html_url", ""), quote=True)
 
@@ -241,53 +235,52 @@ def generate_project_cards(repositories):
             stars = repo.get("stargazers_count", 0)
             forks = repo.get("forks_count", 0)
 
-            output.append(
+            cards.append(
                 f"""
 <td width="50%" valign="top">
-  <h3>
-    🚀 <a href="{url}">{name}</a>
-  </h3>
+  <h3>🚀 <a href="{url}">{name}</a></h3>
   <p>{description}</p>
   <p>
-    <sub>
-      💻 {language}
-      &nbsp; ⭐ {stars}
-      &nbsp; 🍴 {forks}
-    </sub>
+    <sub>💻 {language} &nbsp; ⭐ {stars} &nbsp; 🍴 {forks}</sub>
   </p>
 </td>
 """
             )
 
-        if len(row_repositories) == 1:
-            output.append('<td width="50%" valign="top"></td>')
+        if len(current_row) == 1:
+            cards.append('<td width="50%" valign="top"></td>')
 
-        output.append("</tr>")
+        cards.append("</tr>")
 
-    output.append("</table>")
+    cards.append("</table>")
 
-    return "\n".join(output)
+    return "\n".join(cards)
 
 
-# --------------------------------------------------
-# UPDATE README
-# --------------------------------------------------
+# ==================================================
+# UPDATE ONLY THE MARKED README SECTION
+# ==================================================
 
 def update_readme(project_cards):
-    """Replace content between the README project markers."""
+    """Replace the section between markers without moving other content."""
 
     if not os.path.isfile(README_PATH):
         raise FileNotFoundError(
-            f"{README_PATH} not found. Run this script from the repository root."
+            f"{README_PATH} not found. Run from the repository root."
         )
 
     with open(README_PATH, "r", encoding="utf-8") as file:
         readme = file.read()
 
-    if START_MARKER not in readme or END_MARKER not in readme:
+    # Require exactly one marker of each kind.
+    if readme.count(START_MARKER) != 1:
         raise ValueError(
-            "Project markers are missing from README.md.\n"
-            f"Add these exact markers:\n{START_MARKER}\n{END_MARKER}"
+            "README.md must contain exactly one AUTO-PROJECTS:START marker."
+        )
+
+    if readme.count(END_MARKER) != 1:
+        raise ValueError(
+            "README.md must contain exactly one AUTO-PROJECTS:END marker."
         )
 
     start = readme.index(START_MARKER) + len(START_MARKER)
@@ -298,31 +291,33 @@ def update_readme(project_cards):
             "The project markers are in the wrong order."
         )
 
-    new_section = "\n\n" + project_cards + "\n\n"
-
+    # Replace only the content between markers.
     updated_readme = (
         readme[:start]
-        + new_section
+        + "\n\n"
+        + project_cards
+        + "\n\n"
         + readme[end:]
     )
 
     if updated_readme == readme:
-        print("README project section is already up to date.")
+        print("Project section is already up to date.")
         return
 
     with open(README_PATH, "w", encoding="utf-8") as file:
         file.write(updated_readme)
 
-    print("Successfully updated README.md with project cards.")
+    print("Project cards inserted directly into the marked section.")
 
 
-# --------------------------------------------------
+# ==================================================
 # MAIN
-# --------------------------------------------------
+# ==================================================
 
 def main():
     print("=" * 50)
-    print(f"GitHub Project Updater: {USERNAME}")
+    print("GitHub Dynamic Project Updater")
+    print(f"Account: {USERNAME}")
     print("=" * 50)
 
     try:
@@ -330,10 +325,10 @@ def main():
         project_cards = generate_project_cards(repositories)
         update_readme(project_cards)
 
-        print("Project update completed successfully.")
+        print("SUCCESS: README project section updated.")
 
     except Exception as error:
-        print(f"ERROR: {error}", file=sys.stderr)
+        print(f"FAILED: {error}", file=sys.stderr)
         sys.exit(1)
 
 
