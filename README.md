@@ -20,11 +20,11 @@
 
 ---
 
-## 🚀 About Me
+## 👨‍💻 About Me
 
 - 🎓 Student passionate about software development and technology.
 - 💻 Interested in full-stack development, backend systems, and AI-powered applications.
-- 🌱 Continuously learning new tools, frameworks, and development practices.
+- 🌱 Continuously learning new technologies and development practices.
 - 🛠️ I enjoy turning ideas into practical projects.
 - 🎯 Goal: Build useful, reliable, and user-friendly software.
 
@@ -63,19 +63,19 @@
 ## 🚀 My Projects
 
 <!-- AUTO-PROJECTS:START -->
-Projects are being loaded automatically. Run the **Update Profile Projects** workflow from the Actions tab to populate this section.
+Projects will be generated automatically after you run the **Update Profile Projects** workflow in the Actions tab.
 <!-- AUTO-PROJECTS:END -->
 
-> This section is generated from your public GitHub repositories. Repository descriptions are extracted from their README files where available.
+<sub>Project descriptions are extracted from public repository README files where available. Forks, archived repositories, and this profile repository are excluded.</sub>
 
 ---
 
 ## 🎯 Currently Focused On
 
 - Building practical full-stack applications.
-- Improving problem-solving and programming skills.
+- Improving programming and problem-solving skills.
 - Exploring AI/ML integration in software projects.
-- Writing cleaner, maintainable code.
+- Writing clean, maintainable code.
 
 ---
 
