@@ -1,15 +1,16 @@
 
 import os
 import sys
+import time
 import requests
 
 from html import escape
 from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
 
-# ==========================================
+# ==================================================
 # CONFIGURATION
-# ==========================================
+# ==================================================
 
 USERNAME = "nava-07"
 PROFILE_REPO = "nava-07"
@@ -19,13 +20,15 @@ README_PATH = "README.md"
 START_MARKER = "<!-- AUTO-PROJECTS:START -->"
 END_MARKER = "<!-- AUTO-PROJECTS:END -->"
 
+FEATURED_HEADING = "## 🚀 Featured Projects"
+
 API_URL = "https://api.github.com"
 
 TOKEN = os.getenv("GITHUB_TOKEN")
 
-# ==========================================
-# SESSION AND RETRY CONFIGURATION
-# ==========================================
+# ==================================================
+# HTTP SESSION AND RETRY CONFIGURATION
+# ==================================================
 
 session = requests.Session()
 
@@ -35,7 +38,8 @@ retry_strategy = Retry(
     read=4,
     backoff_factor=2,
     status_forcelist=[429, 500, 502, 503, 504],
-    allowed_methods=["GET"]
+    allowed_methods=["GET"],
+    respect_retry_after_header=True
 )
 
 adapter = HTTPAdapter(max_retries=retry_strategy)
@@ -44,7 +48,8 @@ session.mount("https://", adapter)
 
 HEADERS = {
     "Accept": "application/vnd.github+json",
-    "X-GitHub-Api-Version": "2022-11-28"
+    "X-GitHub-Api-Version": "2022-11-28",
+    "User-Agent": "Navaneeth-GitHub-Project-Updater"
 }
 
 if TOKEN:
@@ -53,36 +58,59 @@ if TOKEN:
 session.headers.update(HEADERS)
 
 
-# ==========================================
+# ==================================================
 # FETCH PUBLIC REPOSITORIES
-# ==========================================
+# ==================================================
 
 def get_public_repositories():
 
     repositories = []
     page = 1
 
-    print("\nFetching GitHub repositories...\n")
+    print("\nConnecting to GitHub API...")
 
     while True:
 
-        print(f"Fetching page {page}...")
+        print(f"Fetching repository page {page}...")
 
         response = session.get(
             f"{API_URL}/users/{USERNAME}/repos",
             params={
                 "type": "public",
                 "sort": "updated",
+                "direction": "desc",
                 "per_page": 100,
                 "page": page
             },
             timeout=30
         )
 
-        if response.status_code == 403:
+        if response.status_code in (403, 429):
+
+            remaining = response.headers.get(
+                "X-RateLimit-Remaining",
+                "Unknown"
+            )
+
+            reset = response.headers.get(
+                "X-RateLimit-Reset",
+                "Unknown"
+            )
+
+            print("\nGitHub API access restricted.")
+            print("Rate limit remaining:", remaining)
+            print("Rate limit reset timestamp:", reset)
+            print("Response:", response.text[:1000])
+
             raise RuntimeError(
-                "GitHub API rate limit or access restriction. "
-                "Check GITHUB_TOKEN and API rate-limit headers."
+                "GitHub API rate limit or access restriction."
+            )
+
+        if response.status_code == 401:
+
+            raise RuntimeError(
+                "GitHub authentication failed. "
+                "Check your GITHUB_TOKEN."
             )
 
         response.raise_for_status()
@@ -94,42 +122,49 @@ def get_public_repositories():
 
         repositories.extend(batch)
 
+        print(f"Received {len(batch)} repositories.")
+
         if len(batch) < 100:
             break
 
         page += 1
 
-    # Filter unwanted repositories
+    # Filter repositories
 
-    eligible_repositories = [
+    eligible = []
 
-        repo for repo in repositories
+    for repo in repositories:
 
-        if repo["name"].lower() != PROFILE_REPO.lower()
+        if repo["name"].lower() == PROFILE_REPO.lower():
+            continue
 
-        and not repo.get("fork", False)
+        if repo.get("fork", False):
+            continue
 
-        and not repo.get("archived", False)
+        if repo.get("archived", False):
+            continue
 
-        and not repo.get("disabled", False)
+        if repo.get("disabled", False):
+            continue
 
-        and not repo.get("private", False)
+        if repo.get("private", False):
+            continue
 
-    ]
+        eligible.append(repo)
 
-    # Keep newest updated repositories first
+    # Sort by latest update
 
-    eligible_repositories.sort(
+    eligible.sort(
         key=lambda repo: repo.get("updated_at", ""),
         reverse=True
     )
 
-    return eligible_repositories
+    return eligible
 
 
-# ==========================================
-# GENERATE PROJECT CARD
-# ==========================================
+# ==================================================
+# GENERATE INDIVIDUAL PROJECT CARDS
+# ==================================================
 
 def generate_project_card(repo):
 
@@ -182,9 +217,9 @@ def generate_project_card(repo):
     return card
 
 
-# ==========================================
+# ==================================================
 # GENERATE ALL PROJECT CARDS
-# ==========================================
+# ==================================================
 
 def generate_project_cards(repositories):
 
@@ -193,7 +228,7 @@ def generate_project_cards(repositories):
         return """
 <div align="center">
 
-### No public projects found yet.
+### No eligible public projects found yet.
 
 Check your public repositories and GitHub API access.
 
@@ -202,9 +237,11 @@ Check your public repositories and GitHub API access.
 
     cards = []
 
+    print("\nGenerating project cards...\n")
+
     for repo in repositories:
 
-        print(f"Generating card: {repo['name']}")
+        print("Creating:", repo["name"])
 
         cards.append(
             generate_project_card(repo)
@@ -226,14 +263,14 @@ Check your public repositories and GitHub API access.
 <td width="50%"></td>
 """
 
-        row = f"""
+        rows.append(
+            f"""
 <tr>
 {first_card}
 {second_card}
 </tr>
 """
-
-        rows.append(row)
+        )
 
     project_html = (
         '<table width="100%" border="0">\n'
@@ -244,13 +281,63 @@ Check your public repositories and GitHub API access.
     return project_html
 
 
-# ==========================================
-# UPDATE README PROJECT SECTION
-# ==========================================
+# ==================================================
+# VALIDATE README STRUCTURE
+# ==================================================
+
+def validate_readme(readme):
+
+    if readme.count(START_MARKER) != 1:
+
+        raise ValueError(
+            "AUTO-PROJECTS START marker must appear exactly once."
+        )
+
+    if readme.count(END_MARKER) != 1:
+
+        raise ValueError(
+            "AUTO-PROJECTS END marker must appear exactly once."
+        )
+
+    start_position = readme.index(START_MARKER)
+
+    end_position = readme.index(END_MARKER)
+
+    if start_position >= end_position:
+
+        raise ValueError(
+            "Project markers are in the wrong order."
+        )
+
+    if FEATURED_HEADING not in readme[:start_position]:
+
+        raise ValueError(
+            "Featured Projects heading must appear before the markers."
+        )
+
+    # Ensure the project section is at the bottom.
+
+    content_after_markers = readme[
+        end_position + len(END_MARKER):
+    ]
+
+    if content_after_markers.strip():
+
+        raise ValueError(
+            "Featured Projects markers must be at the bottom "
+            "of README.md. Move them after all other sections."
+        )
+
+    return start_position, end_position
+
+
+# ==================================================
+# UPDATE README
+# ==================================================
 
 def update_readme(project_cards):
 
-    print("\nUpdating README.md...")
+    print("\nReading README.md...")
 
     if not os.path.exists(README_PATH):
 
@@ -266,42 +353,28 @@ def update_readme(project_cards):
 
         readme = file.read()
 
-    # Validate markers
-
-    if readme.count(START_MARKER) != 1:
-
-        raise ValueError(
-            "START marker must appear exactly once."
-        )
-
-    if readme.count(END_MARKER) != 1:
-
-        raise ValueError(
-            "END marker must appear exactly once."
-        )
-
-    start = (
-        readme.index(START_MARKER)
-        + len(START_MARKER)
+    start_position, end_position = validate_readme(
+        readme
     )
 
-    end = readme.index(END_MARKER)
-
-    if start > end:
-
-        raise ValueError(
-            "Project markers are in the wrong order."
-        )
-
-    # Replace only the content between markers
+    start = (
+        start_position
+        + len(START_MARKER)
+    )
 
     updated_readme = (
         readme[:start]
         + "\n\n"
         + project_cards
         + "\n\n"
-        + readme[end:]
+        + readme[end_position:]
     )
+
+    if updated_readme == readme:
+
+        print("README already contains the latest project cards.")
+
+        return
 
     with open(
         README_PATH,
@@ -311,37 +384,35 @@ def update_readme(project_cards):
 
         file.write(updated_readme)
 
-    print("README project section updated successfully.")
+    print("README.md successfully updated.")
 
 
-# ==========================================
+# ==================================================
 # MAIN FUNCTION
-# ==========================================
+# ==================================================
 
 def main():
 
     print("=" * 55)
-
-    print(" NAVANEETH P - GITHUB PROJECT AUTOMATION ")
-
+    print(" NAVANEETH P - GITHUB PROJECT AUTOMATION")
     print("=" * 55)
 
     repositories = get_public_repositories()
 
-    print(
-        f"\nTotal eligible public repositories: "
-        f"{len(repositories)}"
-    )
+    print("\nTotal public repositories fetched:", len(repositories))
+
+    print("Eligible projects:", len(repositories))
 
     if repositories:
 
-        print("\nAvailable projects:\n")
+        print("\nEligible projects:")
 
-        for repo in repositories:
+        for index, repo in enumerate(repositories, 1):
 
             print(
-                f"  - {repo['name']} "
-                f"({repo.get('language') or 'Various'})"
+                f"{index}. {repo['name']} "
+                f"| {repo.get('language') or 'Various'} "
+                f"| ⭐ {repo.get('stargazers_count', 0)}"
             )
 
     project_cards = generate_project_cards(
@@ -351,15 +422,13 @@ def main():
     update_readme(project_cards)
 
     print("\n" + "=" * 55)
-
     print("SUCCESS: FEATURED PROJECTS UPDATED")
-
     print("=" * 55)
 
 
-# ==========================================
+# ==================================================
 # ERROR HANDLING
-# ==========================================
+# ==================================================
 
 if __name__ == "__main__":
 
@@ -370,7 +439,8 @@ if __name__ == "__main__":
     except requests.RequestException as error:
 
         print(
-            f"\nGITHUB API ERROR: {error}",
+            "\nGITHUB NETWORK/API ERROR:",
+            str(error),
             file=sys.stderr
         )
 
@@ -379,7 +449,8 @@ if __name__ == "__main__":
     except Exception as error:
 
         print(
-            f"\nUPDATE ERROR: {error}",
+            "\nPROJECT UPDATE FAILED:",
+            str(error),
             file=sys.stderr
         )
 
