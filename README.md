@@ -1,13 +1,13 @@
 
 <div align="center">
 
-<!-- LIQUID GLASS HEADER -->
+<!-- PREMIUM LIQUID GLASS HEADER -->
 
-<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&height=230&color=0:9BE7FF,35:B8F5D0,70:DCCBFF,100:9BE7FF&text=NAVANEETH%20P&fontSize=52&fontColor=263849&fontAlignY=38&desc=SOFTWARE%20DEVELOPER%20%7C%20FULL-STACK%20%7C%20AI%2FML&descAlignY=59&descSize=17" alt="Navaneeth P"/>
+<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&height=230&color=0:9BE7FF,35:B8F5D0,70:DCCBFF,100:9BE7FF&text=NAVANEETH%20P&fontSize=52&fontColor=263849&fontAlignY=38&desc=SOFTWARE%20DEVELOPER%20%7C%20FULL-STACK%20%7C%20AI%2FML&descAlignY=59&descSize=17" alt="Navaneeth P profile banner"/>
 
 <!-- FAST ANIMATED RUNNING TEXT -->
 
-<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&pause=250&color=00BFA6&center=true&vCenter=true&width=750&lines=Building+Useful+Digital+Products;Full-Stack+Web+Development;Exploring+AI+and+Machine+Learning;Turning+Ideas+Into+Projects" alt="Animated introduction"/>
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&pause=100&color=00BFA6&center=true&vCenter=true&width=750&lines=Building+Useful+Digital+Products;Full-Stack+Web+Development;Exploring+AI+and+Machine+Learning;Turning+Ideas+Into+Projects" alt="Animated developer introduction"/>
 
 </div>
 
@@ -26,6 +26,7 @@ I'm passionate about building innovative digital products and intelligent applic
 <a href="https://github.com/nava-07">
 <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"/>
 </a>
+
 <a href="https://www.linkedin.com/in/navaneeth-p-404790358/">
 <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/>
 </a>
@@ -37,6 +38,8 @@ I'm passionate about building innovative digital products and intelligent applic
 ---
 
 ## 👨‍💻 About Me
+
+I'm a passionate Computer Science and Engineering student interested in building modern applications and solving real-world problems through technology.
 
 - 🎓 Computer Science and Engineering Student (2024–2028).
 - 💻 Interested in Full-Stack Development and Software Engineering.
@@ -138,9 +141,11 @@ I'm passionate about building innovative digital products and intelligent applic
 
 *Thanks for visiting my profile. Let's create something impactful!*
 
-<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=0:9BE7FF,50:B8F5D0,100:DCCBFF&height=120&section=footer" alt="Footer"/>
+<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=0:9BE7FF,50:B8F5D0,100:DCCBFF&height=120&section=footer" alt="Liquid glass footer"/>
 
 </div>
+
+---
 
 ## 🚀 Featured Projects
 
