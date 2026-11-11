@@ -1,20 +1,31 @@
 
 <div align="center">
 
-<!-- PREMIUM LIQUID GLASS HEADER -->
+<!-- LIQUID GLASS HEADER -->
 
-<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&height=230&color=0:9BE7FF,35:B8F5D0,70:DCCBFF,100:9BE7FF&text=NAVANEETH%20P&fontSize=52&fontColor=263849&fontAlignY=38&desc=SOFTWARE%20DEVELOPER%20%7C%20FULL-STACK%20%7C%20AI%2FML&descAlignY=59&descSize=17" alt="Navaneeth P profile banner"/>
+<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&height=230&color=0:9BE7FF,35:B8F5D0,70:DCCBFF,100:9BE7FF&text=NAVANEETH%20P&fontSize=52&fontColor=263849&fontAlignY=38&desc=SOFTWARE%20DEVELOPER%20%7C%20FULL-STACK%20%7C%20AI%2FML&descAlignY=59&descSize=17" alt="Navaneeth P"/>
 
-<!-- ANIMATED RUNNING TEXT -->
+<!-- FASTER RUNNING TEXT -->
 
-<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&pause=1000&color=00BFA6&center=true&vCenter=true&width=750&lines=Building+Useful+Digital+Products;Full-Stack+Web+Development;Exploring+AI+and+Machine+Learning;Turning+Ideas+Into+Projects" alt="Animated developer introduction"/>
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&pause=500&color=00BFA6&center=true&vCenter=true&width=750&lines=Building+Useful+Digital+Products;Full-Stack+Web+Development;Exploring+AI+and+Machine+Learning;Turning+Ideas+Into+Projects" alt="Animated introduction"/>
 
-<br/>
+</div>
+
+---
+
+<div align="center">
+
+# 👋 Hi, I'm Navaneeth P
+
+### Software Developer | Full-Stack Developer | AI/ML Enthusiast
+
+**Computer Science Student | Technology Explorer | Problem Solver**
+
+I'm passionate about building innovative digital products and intelligent applications. I enjoy transforming creative ideas into practical solutions using modern technologies.
 
 <a href="https://github.com/nava-07">
 <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"/>
 </a>
-
 <a href="https://www.linkedin.com/in/navaneeth-p-404790358/">
 <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/>
 </a>
@@ -26,8 +37,6 @@
 ---
 
 ## 👨‍💻 About Me
-
-I'm a passionate Computer Science student and aspiring Software Developer interested in building modern applications and solving real-world problems through technology.
 
 - 🎓 Computer Science and Engineering Student (2024–2028).
 - 💻 Interested in Full-Stack Development and Software Engineering.
@@ -47,23 +56,23 @@ I'm a passionate Computer Science student and aspiring Software Developer intere
 
 ### Programming Languages
 
-<img src="https://skillicons.dev/icons?i=java,python,js,c,cpp&perline=5" alt="Programming languages"/>
+<img src="https://skillicons.dev/icons?i=java,python,js,c,cpp&perline=5" />
 
 ### Frontend Development
 
-<img src="https://skillicons.dev/icons?i=html,css,react&perline=5" alt="Frontend technologies"/>
+<img src="https://skillicons.dev/icons?i=html,css,react&perline=5" />
 
 ### Backend & Database
 
-<img src="https://skillicons.dev/icons?i=nodejs,express,mongodb,mysql&perline=5" alt="Backend and database technologies"/>
+<img src="https://skillicons.dev/icons?i=nodejs,express,mongodb,mysql&perline=5" />
 
 ### AI, ML & Mobile Development
 
-<img src="https://skillicons.dev/icons?i=tensorflow,flutter,dart&perline=5" alt="AI ML and mobile technologies"/>
+<img src="https://skillicons.dev/icons?i=tensorflow,flutter,dart&perline=5" />
 
 ### Tools & Platforms
 
-<img src="https://skillicons.dev/icons?i=git,github,vscode,postman&perline=5" alt="Developer tools"/>
+<img src="https://skillicons.dev/icons?i=git,github,vscode,postman&perline=5" />
 
 </div>
 
@@ -73,12 +82,11 @@ I'm a passionate Computer Science student and aspiring Software Developer intere
 
 <div align="center">
 
-*Explore my development journey and the projects I'm building.*
+*Discover my projects, experiments and development journey.*
 
 </div>
 
 <!-- AUTO-PROJECTS:START -->
-
 <!-- AUTO-PROJECTS:END -->
 
 ---
@@ -101,25 +109,25 @@ I'm a passionate Computer Science student and aspiring Software Developer intere
 
 ## 🎯 Currently Focused On
 
-| Focus Area | Current Interests |
+| Domain | Focus |
 |:---|:---|
 | 💻 Full-Stack Development | React, Node.js, Express.js and MongoDB |
 | 🤖 Artificial Intelligence | AI-powered applications and intelligent automation |
 | 🧠 Problem Solving | Data Structures and Algorithms |
-| 🗄️ Backend Engineering | REST APIs, authentication and database architecture |
+| 🗄️ Backend Engineering | REST APIs, authentication and databases |
 | 📱 Mobile Development | Flutter and Firebase |
-| 🚀 Project Development | Building innovative and practical applications |
-| 📚 Continuous Learning | Exploring emerging technologies and software engineering |
+| 🚀 Project Development | Innovative real-world applications |
+| 📚 Continuous Learning | Emerging technologies and software engineering |
 
 ---
 
-## 💡 My Developer Philosophy
+## 💡 Developer Philosophy
 
 <div align="center">
 
 ### "Great software is built by combining curiosity, creativity and consistent learning."
 
-I believe in learning by building, experimenting with new technologies and continuously improving the quality of my work.
+*Learn continuously. Build passionately. Innovate fearlessly.*
 
 </div>
 
@@ -130,11 +138,11 @@ I believe in learning by building, experimenting with new technologies and conti
 <div align="center">
 
 <a href="https://github.com/nava-07">
-<img src="https://img.shields.io/badge/GitHub-Explore%20My%20Work-181717?style=for-the-badge&logo=github&logoColor=white" alt="Explore GitHub"/>
+<img src="https://img.shields.io/badge/GitHub-Explore%20My%20Work-181717?style=for-the-badge&logo=github&logoColor=white"/>
 </a>
 
 <a href="https://www.linkedin.com/in/navaneeth-p-404790358/">
-<img src="https://img.shields.io/badge/LinkedIn-Let's%20Connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="Connect on LinkedIn"/>
+<img src="https://img.shields.io/badge/LinkedIn-Let's%20Connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white"/>
 </a>
 
 <br/><br/>
@@ -143,6 +151,6 @@ I believe in learning by building, experimenting with new technologies and conti
 
 *Thanks for visiting my profile. Let's create something impactful!*
 
-<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=0:9BE7FF,50:B8F5D0,100:DCCBFF&height=120&section=footer" alt="Liquid glass profile footer"/>
+<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=0:9BE7FF,50:B8F5D0,100:DCCBFF&height=120&section=footer" alt="Footer"/>
 
 </div>
