@@ -2,12 +2,14 @@
 import os
 import sys
 import requests
+
 from html import escape
 from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
 
 USERNAME = "nava-07"
 PROFILE_REPO = "nava-07"
+
 README_PATH = "README.md"
 
 START_MARKER = "<!-- AUTO-PROJECTS:START -->"
@@ -19,19 +21,20 @@ TOKEN = os.getenv("GITHUB_TOKEN")
 
 session = requests.Session()
 
-retry_strategy = Retry(
+retry = Retry(
     total=4,
     backoff_factor=2,
     status_forcelist=[429, 500, 502, 503, 504],
     allowed_methods=["GET"]
 )
 
-adapter = HTTPAdapter(max_retries=retry_strategy)
+adapter = HTTPAdapter(max_retries=retry)
+
 session.mount("https://", adapter)
 
 HEADERS = {
     "Accept": "application/vnd.github+json",
-    "X-GitHub-Api-Version": "2022-11-28",
+    "X-GitHub-Api-Version": "2022-11-28"
 }
 
 if TOKEN:
@@ -41,10 +44,14 @@ session.headers.update(HEADERS)
 
 
 def get_public_repositories():
+
     repositories = []
     page = 1
 
     while True:
+
+        print(f"Fetching repository page {page}...")
+
         response = session.get(
             f"{API_URL}/users/{USERNAME}/repos",
             params={
@@ -57,6 +64,7 @@ def get_public_repositories():
         )
 
         response.raise_for_status()
+
         batch = response.json()
 
         if not batch:
@@ -69,7 +77,7 @@ def get_public_repositories():
 
         page += 1
 
-    return [
+    eligible = [
         repo for repo in repositories
         if repo["name"].lower() != PROFILE_REPO.lower()
         and not repo.get("fork", False)
@@ -78,81 +86,126 @@ def get_public_repositories():
         and not repo.get("private", False)
     ]
 
+    return eligible
+
 
 def generate_project_cards(repositories):
+
     if not repositories:
+
         return """
-<p align="center">
-  No public projects found yet.
-</p>
+<div align="center">
+
+### No public projects found yet.
+
+Check your public repositories and GitHub API access.
+
+</div>
 """
 
     cards = []
 
     for repo in repositories:
+
         name = escape(repo["name"])
-        url = escape(repo["html_url"], quote=True)
-        description = escape(
-            repo.get("description") or "Explore this project and its implementation."
+
+        url = escape(
+            repo["html_url"],
+            quote=True
         )
-        language = escape(repo.get("language") or "Various")
+
+        description = escape(
+            repo.get("description")
+            or "Explore this project and its implementation."
+        )
+
+        language = escape(
+            repo.get("language") or "Various"
+        )
+
         stars = repo.get("stargazers_count", 0)
 
         card = f"""
 <td width="50%" valign="top">
   <h3>
-    <a href="{url}">{name}</a>
+    <a href="{url}">🚀 {name}</a>
   </h3>
+
   <p>{description}</p>
+
   <p>
     <strong>Language:</strong> {language}
-    &nbsp;·&nbsp;
+    &nbsp; · &nbsp;
     <strong>Stars:</strong> ⭐ {stars}
   </p>
+
   <p>
-    <a href="{url}">View Repository →</a>
+    <a href="{url}">View Project →</a>
   </p>
 </td>
 """
+
         cards.append(card)
 
     rows = []
 
     for index in range(0, len(cards), 2):
+
         first = cards[index]
+
         second = (
             cards[index + 1]
             if index + 1 < len(cards)
             else "<td width='50%'></td>"
         )
 
-        rows.append(f"<tr>\n{first}\n{second}\n</tr>")
+        rows.append(
+            f"<tr>\n{first}\n{second}\n</tr>"
+        )
 
     return (
-        '<table width="100%">\n'
+        '<table width="100%" border="0">\n'
         + "\n".join(rows)
         + "\n</table>"
     )
 
 
 def update_readme(project_cards):
-    if not os.path.exists(README_PATH):
-        raise FileNotFoundError("README.md was not found.")
 
-    with open(README_PATH, "r", encoding="utf-8") as file:
+    if not os.path.exists(README_PATH):
+        raise FileNotFoundError(
+            f"{README_PATH} not found."
+        )
+
+    with open(
+        README_PATH,
+        "r",
+        encoding="utf-8"
+    ) as file:
+
         readme = file.read()
 
     if readme.count(START_MARKER) != 1:
-        raise ValueError("START marker must appear exactly once.")
+        raise ValueError(
+            "START marker must appear exactly once."
+        )
 
     if readme.count(END_MARKER) != 1:
-        raise ValueError("END marker must appear exactly once.")
+        raise ValueError(
+            "END marker must appear exactly once."
+        )
 
-    start = readme.index(START_MARKER) + len(START_MARKER)
+    start = (
+        readme.index(START_MARKER)
+        + len(START_MARKER)
+    )
+
     end = readme.index(END_MARKER)
 
     if start > end:
-        raise ValueError("Project markers are in the wrong order.")
+        raise ValueError(
+            "Project markers are in the wrong order."
+        )
 
     updated_readme = (
         readme[:start]
@@ -162,30 +215,60 @@ def update_readme(project_cards):
         + readme[end:]
     )
 
-    with open(README_PATH, "w", encoding="utf-8") as file:
+    with open(
+        README_PATH,
+        "w",
+        encoding="utf-8"
+    ) as file:
+
         file.write(updated_readme)
 
 
 def main():
-    print("Fetching public repositories...")
+
+    print("=" * 50)
+    print("GITHUB PROFILE PROJECT AUTOMATION")
+    print("=" * 50)
 
     repositories = get_public_repositories()
 
-    print(f"Found {len(repositories)} eligible repositories.")
+    print(
+        f"\nTotal eligible public repositories: "
+        f"{len(repositories)}"
+    )
 
-    project_cards = generate_project_cards(repositories)
+    for repo in repositories:
+        print(f"  - {repo['name']}")
+
+    project_cards = generate_project_cards(
+        repositories
+    )
 
     update_readme(project_cards)
 
-    print("SUCCESS: Featured projects updated.")
+    print("\nSUCCESS!")
+    print("Featured projects updated in README.md.")
 
 
 if __name__ == "__main__":
+
     try:
         main()
+
     except requests.RequestException as error:
-        print(f"GitHub API ERROR: {error}", file=sys.stderr)
+
+        print(
+            f"GITHUB API ERROR: {error}",
+            file=sys.stderr
+        )
+
         sys.exit(1)
+
     except Exception as error:
-        print(f"UPDATE ERROR: {error}", file=sys.stderr)
+
+        print(
+            f"UPDATE ERROR: {error}",
+            file=sys.stderr
+        )
+
         sys.exit(1)
