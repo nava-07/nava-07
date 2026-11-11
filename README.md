@@ -13,10 +13,10 @@
 <br/>
 
 <a href="https://github.com/nava-07">
-<img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" />
+<img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"/>
 </a>
 <a href="https://www.linkedin.com/in/navaneeth-p-404790358/">
-<img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" />
+<img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/>
 </a>
 
 <img src="https://komarev.com/ghpvc/?username=nava-07&style=flat-square&color=00BFA6&label=PROFILE+VIEWS" alt="Profile views"/>
@@ -29,6 +29,7 @@
 
 I'm a passionate Computer Science student and aspiring Software Developer interested in building modern applications and solving real-world problems through technology.
 
+- 🎓 Computer Science and Engineering Student (2024–2028).
 - 💻 Interested in Full-Stack Development and Software Engineering.
 - 🤖 Exploring Artificial Intelligence and Machine Learning.
 - 🌐 Building responsive and interactive web applications.
@@ -36,7 +37,7 @@ I'm a passionate Computer Science student and aspiring Software Developer intere
 - 🚀 Passionate about developing innovative real-world projects.
 - 📚 Continuously learning and improving my technical skills.
 
-**My vision:** Transform innovative ideas into practical, intelligent and scalable software solutions.
+**My Vision:** Transform innovative ideas into practical, intelligent and scalable software solutions.
 
 ---
 
@@ -46,23 +47,23 @@ I'm a passionate Computer Science student and aspiring Software Developer intere
 
 ### Programming Languages
 
-<img src="https://skillicons.dev/icons?i=java,python,js,c,cpp&perline=5" />
+<img src="https://skillicons.dev/icons?i=java,python,js,c,cpp&perline=5" alt="Programming languages"/>
 
 ### Frontend Development
 
-<img src="https://skillicons.dev/icons?i=html,css,react&perline=5" />
+<img src="https://skillicons.dev/icons?i=html,css,react&perline=5" alt="Frontend technologies"/>
 
 ### Backend & Database
 
-<img src="https://skillicons.dev/icons?i=nodejs,express,mongodb,mysql&perline=5" />
+<img src="https://skillicons.dev/icons?i=nodejs,express,mongodb,mysql&perline=5" alt="Backend and database technologies"/>
 
 ### AI, ML & Mobile Development
 
-<img src="https://skillicons.dev/icons?i=tensorflow,flutter,dart&perline=5" />
+<img src="https://skillicons.dev/icons?i=tensorflow,flutter,dart&perline=5" alt="AI ML and mobile technologies"/>
 
 ### Tools & Platforms
 
-<img src="https://skillicons.dev/icons?i=git,github,vscode,postman&perline=5" />
+<img src="https://skillicons.dev/icons?i=git,github,vscode,postman&perline=5" alt="Developer tools"/>
 
 </div>
 
@@ -85,15 +86,19 @@ I'm a passionate Computer Science student and aspiring Software Developer intere
 
 <div align="center">
 
-<img width="49%" src="https://github-readme-stats.vercel.app/api?username=nava-07&show_icons=true&theme=transparent&hide_border=true&rank_icon=github&title_color=00BFA6&icon_color=00BFA6&text_color=7A8490" alt="GitHub statistics"/>
+<img width="100%" src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=nava-07&theme=github_dark" alt="GitHub profile overview"/>
 
-<img width="49%" src="https://github-readme-stats.vercel.app/api/top-langs/?username=nava-07&layout=compact&theme=transparent&hide_border=true&title_color=00BFA6&text_color=7A8490&langs_count=8" alt="Most used programming languages"/>
+<br/>
+
+<img width="49%" src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=nava-07&theme=github_dark" alt="GitHub statistics"/>
+
+<img width="49%" src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=nava-07&theme=github_dark" alt="Most used languages"/>
 
 </div>
 
 ---
 
-## 🎯 What I'm Currently Working On
+## 🎯 Currently Focused On
 
 | Focus Area | Current Interests |
 |:---|:---|
@@ -103,14 +108,19 @@ I'm a passionate Computer Science student and aspiring Software Developer intere
 | 🗄️ Backend Engineering | REST APIs, authentication and database architecture |
 | 📱 Mobile Development | Flutter and Firebase |
 | 🚀 Project Development | Building innovative and practical applications |
+| 📚 Continuous Learning | Exploring emerging technologies and software engineering |
 
 ---
 
-## 🌱 My Developer Philosophy
+## 💡 My Developer Philosophy
 
-> "Great software is built by combining curiosity, creativity and consistent learning."
+<div align="center">
+
+### "Great software is built by combining curiosity, creativity and consistent learning."
 
 I believe in learning by building, experimenting with new technologies and continuously improving the quality of my work.
+
+</div>
 
 ---
 
@@ -119,18 +129,19 @@ I believe in learning by building, experimenting with new technologies and conti
 <div align="center">
 
 <a href="https://github.com/nava-07">
-<img src="https://img.shields.io/badge/GitHub-Explore%20My%20Work-181717?style=for-the-badge&logo=github" />
+<img src="https://img.shields.io/badge/GitHub-Explore%20My%20Work-181717?style=for-the-badge&logo=github&logoColor=white" alt="Explore GitHub"/>
 </a>
+
 <a href="https://www.linkedin.com/in/navaneeth-p-404790358/">
-<img src="https://img.shields.io/badge/LinkedIn-Let's%20Connect-0A66C2?style=for-the-badge&logo=linkedin" />
+<img src="https://img.shields.io/badge/LinkedIn-Let's%20Connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="Connect on LinkedIn"/>
 </a>
 
 <br/><br/>
 
-### 💡 Open to Learning | Building | Collaborating
+### 💎 Open to Learning | Building | Collaborating
 
 *Thanks for visiting my profile. Let's create something impactful!*
 
-<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=0:9BE7FF,50:B8F5D0,100:DCCBFF&height=120&section=footer" alt="Profile footer"/>
+<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=0:9BE7FF,50:B8F5D0,100:DCCBFF&height=120&section=footer" alt="Liquid glass profile footer"/>
 
 </div>
