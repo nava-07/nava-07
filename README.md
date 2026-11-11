@@ -1,20 +1,20 @@
- <div align="center">
+
+<div align="center">
 
 <!-- PREMIUM LIQUID GLASS HEADER -->
 
 <img width="100%" src="https://capsule-render.vercel.app/api?type=waving&height=230&color=0:9BE7FF,35:B8F5D0,70:DCCBFF,100:9BE7FF&text=NAVANEETH%20P&fontSize=52&fontColor=263849&fontAlignY=38&desc=SOFTWARE%20DEVELOPER%20%7C%20FULL-STACK%20%7C%20AI%2FML&descAlignY=59&descSize=17" alt="Navaneeth P profile banner"/>
 
-# Hi, I'm Navaneeth P 👋
+<!-- ANIMATED RUNNING TEXT -->
 
-### Software Developer | Full-Stack Developer | AI/ML Enthusiast
-
-*Building intelligent applications. Creating meaningful digital experiences.*
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&pause=1000&color=00BFA6&center=true&vCenter=true&width=750&lines=Building+Useful+Digital+Products;Full-Stack+Web+Development;Exploring+AI+and+Machine+Learning;Turning+Ideas+Into+Projects" alt="Animated developer introduction"/>
 
 <br/>
 
 <a href="https://github.com/nava-07">
 <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"/>
 </a>
+
 <a href="https://www.linkedin.com/in/navaneeth-p-404790358/">
 <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/>
 </a>
@@ -78,6 +78,7 @@ I'm a passionate Computer Science student and aspiring Software Developer intere
 </div>
 
 <!-- AUTO-PROJECTS:START -->
+
 <!-- AUTO-PROJECTS:END -->
 
 ---
