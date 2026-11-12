@@ -156,4 +156,256 @@ I'm a passionate Computer Science and Engineering student interested in building
 </div>
 
 <!-- AUTO-PROJECTS:START -->
+
+<table width="100%" border="0">
+
+<tr>
+
+<td width="50%" valign="top">
+
+<h3>
+<a href="https://github.com/nava-07/pact-ai">🚀 pact-ai</a>
+</h3>
+
+<p>Delegate the Plan. Own the Payment. Consent-Aware Agentic Payments powered by Google Gemini and PayPal Orders v2 with deterministic policy enforcement and an immutable audit ledger.</p>
+
+<p>
+<strong>Language:</strong> TypeScript
+</p>
+
+<p>
+⭐ <strong>0 Stars</strong>
+&nbsp; · &nbsp;
+🍴 <strong>0 Forks</strong>
+</p>
+
+<p>
+<a href="https://github.com/nava-07/pact-ai">View Project →</a>
+</p>
+
+</td>
+
+
+<td width="50%" valign="top">
+
+<h3>
+<a href="https://github.com/nava-07/LifeOS">🚀 LifeOS</a>
+</h3>
+
+<p>LifeOS AI — Your Personal Digital Twin | Built with Meta Llama API, Multi-Agent Orchestration, RAG Knowledge Hub, and Persistent Memory Engine</p>
+
+<p>
+<strong>Language:</strong> TypeScript
+</p>
+
+<p>
+⭐ <strong>0 Stars</strong>
+&nbsp; · &nbsp;
+🍴 <strong>0 Forks</strong>
+</p>
+
+<p>
+<a href="https://github.com/nava-07/LifeOS">View Project →</a>
+</p>
+
+</td>
+
+</tr>
+
+
+<tr>
+
+<td width="50%" valign="top">
+
+<h3>
+<a href="https://github.com/nava-07/FarmWise">🚀 FarmWise</a>
+</h3>
+
+<p>🌾 AI-Powered Smart Agriculture &amp; Farmer Guidance System — Multilingual (23 Indian Languages), Gemini 1.5 Flash Vision Disease Scanner, Hyperlocal Weather, Live APMC Mandi Rates, and Farm Finance Ledger built with Flutter &amp; Spring Boot.</p>
+
+<p>
+<strong>Language:</strong> Dart
+</p>
+
+<p>
+⭐ <strong>1 Stars</strong>
+&nbsp; · &nbsp;
+🍴 <strong>0 Forks</strong>
+</p>
+
+<p>
+<a href="https://github.com/nava-07/FarmWise">View Project →</a>
+</p>
+
+</td>
+
+
+<td width="50%" valign="top">
+
+<h3>
+<a href="https://github.com/nava-07/futureforge">🚀 futureforge</a>
+</h3>
+
+<p>🚀 AI-Powered Skill Optimization &amp; Career Intelligence Platform — Features Google Gemini 1.5 Flash Skill Gap Auditing, Multi-Metric ATS Resume Scanner (PDF/DOCX), Job Matching, Live Resume Builder with PDF Export, Dynamic Roadmaps &amp; Public Developer Portfolios built with MERN &amp; Tailwind CSS v4.</p>
+
+<p>
+<strong>Language:</strong> JavaScript
+</p>
+
+<p>
+⭐ <strong>1 Stars</strong>
+&nbsp; · &nbsp;
+🍴 <strong>0 Forks</strong>
+</p>
+
+<p>
+<a href="https://github.com/nava-07/futureforge">View Project →</a>
+</p>
+
+</td>
+
+</tr>
+
+
+<tr>
+
+<td width="50%" valign="top">
+
+<h3>
+<a href="https://github.com/nava-07/RepoPilot-Ai">🚀 RepoPilot-Ai</a>
+</h3>
+
+<p>Understand the code. Find the problem. Verify the fix. An open-source, repository-aware AI coding agent with multimodal bug investigation, patch generation and isolated test verification.</p>
+
+<p>
+<strong>Language:</strong> Python
+</p>
+
+<p>
+⭐ <strong>1 Stars</strong>
+&nbsp; · &nbsp;
+🍴 <strong>0 Forks</strong>
+</p>
+
+<p>
+<a href="https://github.com/nava-07/RepoPilot-Ai">View Project →</a>
+</p>
+
+</td>
+
+
+<td width="50%" valign="top">
+
+<h3>
+<a href="https://github.com/nava-07/ResQ">🚀 ResQ</a>
+</h3>
+
+<p>ResQ is an intelligent disaster response and rescue coordination platform that connects citizens, volunteers and professional rescue teams through real-time SOS alerts, GPS-based incident tracking, interactive disaster maps and centralized emergency management. Built with the MERN stack and Socket.IO with planned AI-powered triage and disaster</p>
+
+<p>
+<strong>Language:</strong> JavaScript
+</p>
+
+<p>
+⭐ <strong>0 Stars</strong>
+&nbsp; · &nbsp;
+🍴 <strong>0 Forks</strong>
+</p>
+
+<p>
+<a href="https://github.com/nava-07/ResQ">View Project →</a>
+</p>
+
+</td>
+
+</tr>
+
+
+<tr>
+
+<td width="50%" valign="top">
+
+<h3>
+<a href="https://github.com/nava-07/bio">🚀 bio</a>
+</h3>
+
+<p>Explore this project and its implementation.</p>
+
+<p>
+<strong>Language:</strong> TypeScript
+</p>
+
+<p>
+⭐ <strong>0 Stars</strong>
+&nbsp; · &nbsp;
+🍴 <strong>0 Forks</strong>
+</p>
+
+<p>
+<a href="https://github.com/nava-07/bio">View Project →</a>
+</p>
+
+</td>
+
+
+<td width="50%" valign="top">
+
+<h3>
+<a href="https://github.com/nava-07/Todo-app">🚀 Todo-app</a>
+</h3>
+
+<p>A best futurized Task Manager</p>
+
+<p>
+<strong>Language:</strong> HTML
+</p>
+
+<p>
+⭐ <strong>0 Stars</strong>
+&nbsp; · &nbsp;
+🍴 <strong>0 Forks</strong>
+</p>
+
+<p>
+<a href="https://github.com/nava-07/Todo-app">View Project →</a>
+</p>
+
+</td>
+
+</tr>
+
+
+<tr>
+
+<td width="50%" valign="top">
+
+<h3>
+<a href="https://github.com/nava-07/nt-bookings7">🚀 nt-bookings7</a>
+</h3>
+
+<p>Explore this project and its implementation.</p>
+
+<p>
+<strong>Language:</strong> Various
+</p>
+
+<p>
+⭐ <strong>0 Stars</strong>
+&nbsp; · &nbsp;
+🍴 <strong>0 Forks</strong>
+</p>
+
+<p>
+<a href="https://github.com/nava-07/nt-bookings7">View Project →</a>
+</p>
+
+</td>
+
+
+<td width="50%"></td>
+
+</tr>
+
+</table>
+
 <!-- AUTO-PROJECTS:END -->
