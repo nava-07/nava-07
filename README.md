@@ -164,6 +164,31 @@ I'm a passionate Computer Science and Engineering student interested in building
 <td width="50%" valign="top">
 
 <h3>
+<a href="https://github.com/nava-07/bio">🚀 bio</a>
+</h3>
+
+<p>My Portfolio Web </p>
+
+<p>
+<strong>Language:</strong> TypeScript
+</p>
+
+<p>
+⭐ <strong>0 Stars</strong>
+&nbsp; · &nbsp;
+🍴 <strong>0 Forks</strong>
+</p>
+
+<p>
+<a href="https://github.com/nava-07/bio">View Project →</a>
+</p>
+
+</td>
+
+
+<td width="50%" valign="top">
+
+<h3>
 <a href="https://github.com/nava-07/pact-ai">🚀 pact-ai</a>
 </h3>
 
@@ -185,6 +210,10 @@ I'm a passionate Computer Science and Engineering student interested in building
 
 </td>
 
+</tr>
+
+
+<tr>
 
 <td width="50%" valign="top">
 
@@ -210,10 +239,6 @@ I'm a passionate Computer Science and Engineering student interested in building
 
 </td>
 
-</tr>
-
-
-<tr>
 
 <td width="50%" valign="top">
 
@@ -239,6 +264,10 @@ I'm a passionate Computer Science and Engineering student interested in building
 
 </td>
 
+</tr>
+
+
+<tr>
 
 <td width="50%" valign="top">
 
@@ -264,10 +293,6 @@ I'm a passionate Computer Science and Engineering student interested in building
 
 </td>
 
-</tr>
-
-
-<tr>
 
 <td width="50%" valign="top">
 
@@ -293,6 +318,10 @@ I'm a passionate Computer Science and Engineering student interested in building
 
 </td>
 
+</tr>
+
+
+<tr>
 
 <td width="50%" valign="top">
 
@@ -314,35 +343,6 @@ I'm a passionate Computer Science and Engineering student interested in building
 
 <p>
 <a href="https://github.com/nava-07/ResQ">View Project →</a>
-</p>
-
-</td>
-
-</tr>
-
-
-<tr>
-
-<td width="50%" valign="top">
-
-<h3>
-<a href="https://github.com/nava-07/bio">🚀 bio</a>
-</h3>
-
-<p>Explore this project and its implementation.</p>
-
-<p>
-<strong>Language:</strong> TypeScript
-</p>
-
-<p>
-⭐ <strong>0 Stars</strong>
-&nbsp; · &nbsp;
-🍴 <strong>0 Forks</strong>
-</p>
-
-<p>
-<a href="https://github.com/nava-07/bio">View Project →</a>
 </p>
 
 </td>
