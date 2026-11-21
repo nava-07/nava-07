@@ -164,6 +164,31 @@ I'm a passionate Computer Science and Engineering student interested in building
 <td width="50%" valign="top">
 
 <h3>
+<a href="https://github.com/nava-07/Scanalyze">🚀 Scanalyze</a>
+</h3>
+
+<p>🔍 Scanalyze — Real-Time QR Code &amp; URL Threat Intelligence Engine: Webcam QR detection, server-side image decoding, and heuristic security analysis for phishing domains, malicious keywords, and disguised URL shorteners.</p>
+
+<p>
+<strong>Language:</strong> JavaScript
+</p>
+
+<p>
+⭐ <strong>0 Stars</strong>
+&nbsp; · &nbsp;
+🍴 <strong>0 Forks</strong>
+</p>
+
+<p>
+<a href="https://github.com/nava-07/Scanalyze">View Project →</a>
+</p>
+
+</td>
+
+
+<td width="50%" valign="top">
+
+<h3>
 <a href="https://github.com/nava-07/bio">🚀 bio</a>
 </h3>
 
@@ -185,6 +210,10 @@ I'm a passionate Computer Science and Engineering student interested in building
 
 </td>
 
+</tr>
+
+
+<tr>
 
 <td width="50%" valign="top">
 
@@ -210,10 +239,6 @@ I'm a passionate Computer Science and Engineering student interested in building
 
 </td>
 
-</tr>
-
-
-<tr>
 
 <td width="50%" valign="top">
 
@@ -239,6 +264,10 @@ I'm a passionate Computer Science and Engineering student interested in building
 
 </td>
 
+</tr>
+
+
+<tr>
 
 <td width="50%" valign="top">
 
@@ -264,10 +293,6 @@ I'm a passionate Computer Science and Engineering student interested in building
 
 </td>
 
-</tr>
-
-
-<tr>
 
 <td width="50%" valign="top">
 
@@ -293,6 +318,10 @@ I'm a passionate Computer Science and Engineering student interested in building
 
 </td>
 
+</tr>
+
+
+<tr>
 
 <td width="50%" valign="top">
 
@@ -318,10 +347,6 @@ I'm a passionate Computer Science and Engineering student interested in building
 
 </td>
 
-</tr>
-
-
-<tr>
 
 <td width="50%" valign="top">
 
@@ -347,6 +372,10 @@ I'm a passionate Computer Science and Engineering student interested in building
 
 </td>
 
+</tr>
+
+
+<tr>
 
 <td width="50%" valign="top">
 
@@ -372,10 +401,6 @@ I'm a passionate Computer Science and Engineering student interested in building
 
 </td>
 
-</tr>
-
-
-<tr>
 
 <td width="50%" valign="top">
 
@@ -400,9 +425,6 @@ I'm a passionate Computer Science and Engineering student interested in building
 </p>
 
 </td>
-
-
-<td width="50%"></td>
 
 </tr>
 
