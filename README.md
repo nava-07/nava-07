@@ -164,6 +164,31 @@ I'm a passionate Computer Science and Engineering student interested in building
 <td width="50%" valign="top">
 
 <h3>
+<a href="https://github.com/nava-07/MyVault">🚀 MyVault</a>
+</h3>
+
+<p>🔐 MyVault — Enterprise-Grade Personal Digital Locker &amp; Secure Document Vault. Built with React 18, Vite, Tailwind CSS, Supabase PostgreSQL with Row Level Security (RLS), Private Storage Buckets with Signed URLs, Dual Email/Mobile Authentication, Native in-browser DOCX/PDF/CSV/Image Previewing, and ZIP Batch Export.</p>
+
+<p>
+<strong>Language:</strong> JavaScript
+</p>
+
+<p>
+⭐ <strong>0 Stars</strong>
+&nbsp; · &nbsp;
+🍴 <strong>0 Forks</strong>
+</p>
+
+<p>
+<a href="https://github.com/nava-07/MyVault">View Project →</a>
+</p>
+
+</td>
+
+
+<td width="50%" valign="top">
+
+<h3>
 <a href="https://github.com/nava-07/helpdesk">🚀 helpdesk</a>
 </h3>
 
@@ -185,6 +210,10 @@ I'm a passionate Computer Science and Engineering student interested in building
 
 </td>
 
+</tr>
+
+
+<tr>
 
 <td width="50%" valign="top">
 
@@ -210,10 +239,6 @@ I'm a passionate Computer Science and Engineering student interested in building
 
 </td>
 
-</tr>
-
-
-<tr>
 
 <td width="50%" valign="top">
 
@@ -239,6 +264,10 @@ I'm a passionate Computer Science and Engineering student interested in building
 
 </td>
 
+</tr>
+
+
+<tr>
 
 <td width="50%" valign="top">
 
@@ -264,10 +293,6 @@ I'm a passionate Computer Science and Engineering student interested in building
 
 </td>
 
-</tr>
-
-
-<tr>
 
 <td width="50%" valign="top">
 
@@ -293,6 +318,10 @@ I'm a passionate Computer Science and Engineering student interested in building
 
 </td>
 
+</tr>
+
+
+<tr>
 
 <td width="50%" valign="top">
 
@@ -318,10 +347,6 @@ I'm a passionate Computer Science and Engineering student interested in building
 
 </td>
 
-</tr>
-
-
-<tr>
 
 <td width="50%" valign="top">
 
@@ -347,6 +372,10 @@ I'm a passionate Computer Science and Engineering student interested in building
 
 </td>
 
+</tr>
+
+
+<tr>
 
 <td width="50%" valign="top">
 
@@ -372,10 +401,6 @@ I'm a passionate Computer Science and Engineering student interested in building
 
 </td>
 
-</tr>
-
-
-<tr>
 
 <td width="50%" valign="top">
 
@@ -401,6 +426,10 @@ I'm a passionate Computer Science and Engineering student interested in building
 
 </td>
 
+</tr>
+
+
+<tr>
 
 <td width="50%" valign="top">
 
@@ -426,10 +455,6 @@ I'm a passionate Computer Science and Engineering student interested in building
 
 </td>
 
-</tr>
-
-
-<tr>
 
 <td width="50%" valign="top">
 
@@ -454,9 +479,6 @@ I'm a passionate Computer Science and Engineering student interested in building
 </p>
 
 </td>
-
-
-<td width="50%"></td>
 
 </tr>
 
